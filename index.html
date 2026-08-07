@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Qiskit Fall Fest — uOttawa</title>
+    <script>
+      (function () {
+        var saved = localStorage.getItem('qff-theme')
+        var wantsLight = saved ? saved === 'light' : window.matchMedia('(prefers-color-scheme: light)').matches
+        if (wantsLight) document.documentElement.classList.add('light')
+      })()
+    </script>
+    <meta name="description" content="Qiskit Fall Fest at the University of Ottawa — free beginner-friendly quantum computing workshops and a hackathon powered by IBM Quantum." />
+    <!-- Deliberately relative (no leading slash, no %BASE_URL%) — Vite's dev
+         server double-prepends the base path onto any '/'-leading href here,
+         so plain browser-relative resolution against the page URL is used instead. -->
+    <link rel="icon" type="image/png" href="Qiskit_03.png?v=4" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

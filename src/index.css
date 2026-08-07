@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* dark theme (default) — "R G B" triplets consumed via rgb(var(--x) / alpha) */
+  --void: 5 4 9;
+  --void-deep: 10 7 20;
+  --void-raised: 18 13 34;
+  --ink: 244 242 251;
+  --ink-muted: 173 166 201;
+  --ink-faint: 110 102 144;
+  /* text-only accent variants — same neon hue as the glow tokens in dark mode */
+  --cyan-text: 37 229 245;
+  --cyan-strong: 124 245 255;
+  --magenta-text: 255 111 216;
+  --quantum-text: 165 110 255;
+}
+
+:root.light {
+  --void: 248 247 252;
+  --void-deep: 255 255 255;
+  --void-raised: 239 236 247;
+  --ink: 23 17 35;
+  --ink-muted: 70 64 96;
+  --ink-faint: 104 98 130;
+  /* deepened so accent text stays readable on a light background, even at reduced opacity */
+  --cyan-text: 10 65 80;
+  --cyan-strong: 6 46 56;
+  --magenta-text: 190 24 93;
+  --quantum-text: 109 40 217;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-size: 112.5%; /* 18px base — the 16px default read too small */
+  }
+  body {
+    @apply bg-void text-ink font-body antialiased transition-colors duration-300;
+  }
+  h1, h2, h3, h4 {
+    @apply font-display;
+  }
+  ::selection {
+    background: #a56eff;
+    color: #fff;
+  }
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-void;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-ink/15;
+    border-radius: 8px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-ink/30;
+  }
+  :focus-visible {
+    outline: 2px solid #25e5f5;
+    outline-offset: 3px;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-ink/[0.04] backdrop-blur-xl border border-ink/10;
+  }
+  .glass-strong {
+    @apply bg-ink/[0.06] backdrop-blur-2xl border border-ink/[0.14];
+  }
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-cyan-text via-quantum-text to-magenta-text;
+  }
+  .eyebrow {
+    @apply font-mono text-xs tracking-[0.25em] uppercase text-cyan-text/80;
+  }
+  .section {
+    @apply relative mx-auto w-full max-w-6xl px-6 md:px-10 py-24 md:py-32;
+  }
+  .btn-glow {
+    @apply relative inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 font-display font-medium text-accent-ink bg-cyan-glow shadow-glow-cyan transition-transform duration-300 hover:scale-[1.04] active:scale-[0.98];
+  }
+  .btn-ghost {
+    @apply relative inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 font-display font-medium text-ink border border-ink/20 hover:border-cyan-glow/60 hover:text-cyan-strong transition-colors duration-300;
+  }
+  /* approximate a dark map without needing a Maps API key */
+  .map-frame {
+    filter: invert(92%) hue-rotate(180deg) contrast(90%);
+    border: 0;
+  }
+  :root.light .map-frame {
+    filter: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
