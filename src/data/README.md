@@ -77,6 +77,14 @@ across all three; a phone number is asked (optionally) for Volunteers and
 Sponsors only; the rest changes based on the selected role (see `ROLES` and the
 `*_OPTIONS` arrays in `register.js`).
 
+Participants and Volunteers both get the same "background" section — a
+None/Beginner/Intermediate/Advanced scale for Quantum computing, Programming,
+Qiskit, and Linear algebra (`BACKGROUND_TOPICS` in `register.js` — add/remove a
+topic there and it shows up on both forms automatically, but remember to also
+update `BACKGROUND_KEYS`/`BACKGROUND_HEADERS` in the Apps Script below to
+match). Participants are also asked whether they're local and able to attend
+in person (`LOCAL_OPTIONS`).
+
 Name is always required. Email is always required. Dietary restrictions is
 required for Participants only (defaults to "None" so it's never left blank);
 for Volunteers and Sponsors it's optional. Everything else is optional unless
@@ -100,6 +108,15 @@ needed):
    **Extensions → Apps Script**. Delete whatever's in `Code.gs` and paste this:
 
    ```js
+   // Order matches BACKGROUND_TOPICS in src/data/register.js — update both
+   // together if you add/remove/reorder a topic.
+   var BACKGROUND_KEYS = ['background_quantum', 'background_programming', 'background_qiskit', 'background_linear_algebra']
+   var BACKGROUND_HEADERS = ['Background: Quantum', 'Background: Programming', 'Background: Qiskit', 'Background: Linear Algebra']
+
+   function backgroundValues(data) {
+     return BACKGROUND_KEYS.map(function (key) { return data[key] })
+   }
+
    function dietaryText(data) {
      // 'Other' comes with a free-text follow-up field — fold the two into one cell
      return data.dietary === 'Other' && data.dietary_other
@@ -123,14 +140,14 @@ needed):
 
        if (data.role === 'volunteer') {
          const sheet = getOrCreateSheet(ss, 'Volunteers', [
-           'Timestamp', 'Name', 'Email', 'Phone', 'Background',
-           'Available Days', 'Help With', 'Dietary', 'Accessibility',
-         ])
+           'Timestamp', 'Name', 'Email', 'Phone', 'Background Notes',
+         ].concat(BACKGROUND_HEADERS, ['Available Days', 'Help With', 'Dietary', 'Accessibility']))
          sheet.appendRow([
            new Date(), data.name, data.email, data.phone, data.volunteer_background,
+         ].concat(backgroundValues(data), [
            (data.volunteer_days || []).join(', '), data.volunteer_help,
            dietaryText(data), data.accessibility,
-         ])
+         ]))
        } else if (data.role === 'sponsor') {
          const sheet = getOrCreateSheet(ss, 'Sponsors', [
            'Timestamp', 'Name', 'Email', 'Organization', 'Role', 'Website',
@@ -143,13 +160,12 @@ needed):
          ])
        } else {
          const sheet = getOrCreateSheet(ss, 'Participants', [
-           'Timestamp', 'Name', 'Email', 'Status', 'Program', 'Background',
-           'Team Status', 'Dietary', 'Accessibility',
-         ])
+           'Timestamp', 'Name', 'Email', 'Status', 'Program', 'Local Attendance', 'Team Status',
+         ].concat(BACKGROUND_HEADERS, ['Dietary', 'Accessibility']))
          sheet.appendRow([
            new Date(), data.name, data.email, data.status_type, data.program,
-           data.experience, data.team, dietaryText(data), data.accessibility,
-         ])
+           data.local_attendance, data.team,
+         ].concat(backgroundValues(data), [dietaryText(data), data.accessibility]))
        }
 
        return ContentService

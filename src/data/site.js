@@ -41,7 +41,7 @@ export const CODE_OF_CONDUCT_URL = 'https://www.uoquantum.com/code-of-conduct'
 export const LOGO_URL = '/Qiskit_03.png'
 
 export const SOCIALS = [
-  { label: 'Discord', icon: 'discord', url: 'https://discord.gg/qqgnpGsc' },
+  { label: 'Discord', icon: 'discord', url: EVENT.discord },
   { label: 'Instagram', icon: 'instagram', url: 'https://www.instagram.com/uottawaquantum' },
 ]
 

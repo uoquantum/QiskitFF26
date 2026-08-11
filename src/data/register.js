@@ -3,7 +3,7 @@
 // Paste your Google Apps Script Web App URL here (ends in /exec).
 // See the "Registration form backend" section in this folder's README.md
 // for how to set that up.
-export const FORM_ENDPOINT = 'https://script.google.com/macros/s/AKfycby8lax6gfdQS9EQoRMAYuRXVKPPIKeYuDU_ilzKgyc0B6H46sRRk7lh69Jw-JQXZAH_1g/exec'
+export const FORM_ENDPOINT = 'https://script.google.com/macros/s/AKfycbwkErjNIXFMQErGA5aFT6QBg6ZbGz6zDPVahvap8GOEs-rd7i0u-49XcTMfeScpZ8kxUQ/exec'
 
 // The three registration paths — each shows a different set of fields below.
 export const ROLES = [
@@ -24,6 +24,19 @@ export const DIETARY_OPTIONS = [
   'Other',
 ]
 
+// Background-skill scale, reused for each topic below (participants & volunteers).
+// First option is the default.
+export const SKILL_LEVEL_OPTIONS = ['None', 'Beginner', 'Intermediate', 'Advanced']
+
+// One entry per topic we ask about — reused to render both the participant
+// and volunteer background sections, so the two stay in sync automatically.
+export const BACKGROUND_TOPICS = [
+  { key: 'background_quantum', label: 'Quantum computing' },
+  { key: 'background_programming', label: 'Programming (e.g. Python)' },
+  { key: 'background_qiskit', label: 'Qiskit' },
+  { key: 'background_linear_algebra', label: 'Linear algebra' },
+]
+
 // --- Participant fields ---
 export const STATUS_OPTIONS = [
   'uOttawa student',
@@ -32,10 +45,9 @@ export const STATUS_OPTIONS = [
   'Industry / other',
 ]
 
-export const EXPERIENCE_OPTIONS = [
-  'New to quantum computing',
-  'Some coursework / self-taught',
-  'Research or industry experience',
+export const LOCAL_OPTIONS = [
+  'Yes, I can attend in person',
+  'No, I cannot attend in person',
 ]
 
 export const TEAM_OPTIONS = [

@@ -9,8 +9,10 @@ import {
   ROLES,
   DIETARY_OPTIONS,
   STATUS_OPTIONS,
-  EXPERIENCE_OPTIONS,
+  LOCAL_OPTIONS,
   TEAM_OPTIONS,
+  SKILL_LEVEL_OPTIONS,
+  BACKGROUND_TOPICS,
   VOLUNTEER_DAY_OPTIONS,
   VOLUNTEER_HELP_OPTIONS,
   SPONSOR_SUPPORT_OPTIONS,
@@ -19,6 +21,8 @@ import {
 const inputCls =
   'w-full rounded-xl bg-ink/[0.03] border border-ink/10 px-4 py-3 text-sm text-ink placeholder:text-ink-faint focus:border-cyan-glow/60 focus:bg-ink/[0.05] outline-none transition-colors'
 const labelCls = 'block text-xs font-mono uppercase tracking-wider text-ink-muted mb-2'
+
+const backgroundDefaults = Object.fromEntries(BACKGROUND_TOPICS.map((t) => [t.key, SKILL_LEVEL_OPTIONS[0]]))
 
 const initialForm = {
   role: ROLES[0].key,
@@ -29,10 +33,11 @@ const initialForm = {
   accessibility: '',
   agree: false,
   phone: '', // asked for volunteers & sponsors only
+  ...backgroundDefaults, // asked for participants & volunteers
   // participant
   status_type: STATUS_OPTIONS[0],
   program: '',
-  experience: EXPERIENCE_OPTIONS[0],
+  local_attendance: LOCAL_OPTIONS[0],
   team: TEAM_OPTIONS[0],
   // volunteer
   volunteer_background: '',
@@ -51,6 +56,26 @@ function Field({ label, children }) {
     <div>
       <label className={labelCls}>{label}</label>
       {children}
+    </div>
+  )
+}
+
+function BackgroundScales({ form, update }) {
+  return (
+    <div>
+      <label className={labelCls}>Your background (helps us tailor content &amp; match mentors)</label>
+      <div className="grid gap-4 sm:grid-cols-2">
+        {BACKGROUND_TOPICS.map((topic) => (
+          <div key={topic.key}>
+            <label className="block text-xs text-ink-faint mb-1.5">{topic.label}</label>
+            <select className={inputCls} value={form[topic.key]} onChange={update(topic.key)}>
+              {SKILL_LEVEL_OPTIONS.map((o) => (
+                <option key={o}>{o}</option>
+              ))}
+            </select>
+          </div>
+        ))}
+      </div>
     </div>
   )
 }
@@ -196,9 +221,9 @@ export default function Register() {
                         </Field>
                       </div>
                       <div className="grid gap-6 sm:grid-cols-2">
-                        <Field label="Quantum computing background">
-                          <select className={inputCls} value={form.experience} onChange={update('experience')}>
-                            {EXPERIENCE_OPTIONS.map((o) => (
+                        <Field label="Are you local and able to attend in person?">
+                          <select className={inputCls} value={form.local_attendance} onChange={update('local_attendance')}>
+                            {LOCAL_OPTIONS.map((o) => (
                               <option key={o}>{o}</option>
                             ))}
                           </select>
@@ -211,6 +236,7 @@ export default function Register() {
                           </select>
                         </Field>
                       </div>
+                      <BackgroundScales form={form} update={update} />
                     </motion.div>
                   )}
 
@@ -224,10 +250,10 @@ export default function Register() {
                       className="space-y-6"
                     >
                       <div className="grid gap-6 sm:grid-cols-2">
-                        <Field label="Relevant background / skills (optional)">
+                        <Field label="Anything else about your background? (optional)">
                           <input
                             className={inputCls}
-                            placeholder="e.g. Qiskit experience, event logistics, photography…"
+                            placeholder="e.g. mentored at past hackathons, event logistics, photography…"
                             value={form.volunteer_background}
                             onChange={update('volunteer_background')}
                           />
@@ -236,6 +262,7 @@ export default function Register() {
                           <input type="tel" className={inputCls} placeholder="613 555 0123" value={form.phone} onChange={update('phone')} />
                         </Field>
                       </div>
+                      <BackgroundScales form={form} update={update} />
                       <div>
                         <label className={labelCls}>Which days can you help?</label>
                         <div className="flex flex-wrap gap-2">
