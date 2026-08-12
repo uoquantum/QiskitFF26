@@ -19,6 +19,18 @@ export const RESOURCES = [
         url: 'https://docs.quantum.ibm.com/',
       },
       {
+        title: 'Qiskit Quickstart Guide',
+        type: 'Docs',
+        desc: 'The fastest path from zero to running your first circuit.',
+        url: 'https://quantum.cloud.ibm.com/docs/en/guides/quick-start',
+      },
+      {
+        title: 'QFF Tutorials (uOttawa Quantum)',
+        type: 'Code',
+        desc: "Our own curated tutorial notebooks used in past Fall Fest workshops.",
+        url: 'https://github.com/uoquantum/QFF_Tutorials/tree/main',
+      },
+      {
         title: 'Qiskit YouTube Channel',
         type: 'Video',
         desc: 'Tutorials, seminars, and conference talks straight from the Qiskit team.',
@@ -29,6 +41,35 @@ export const RESOURCES = [
         type: 'Code',
         desc: 'Source code, example notebooks, and issue trackers for the whole Qiskit ecosystem.',
         url: 'https://github.com/Qiskit',
+      },
+      {
+        title: 'IBM Quantum Events',
+        type: 'Docs',
+        desc: 'Talks, workshops, and office hours happening across the Qiskit community.',
+        url: 'https://www.ibm.com/quantum/events',
+      },
+    ],
+  },
+  {
+    category: 'Try It In Your Browser (No Install)',
+    items: [
+      {
+        title: 'Qiskit 101 — Hello World Notebook',
+        type: 'Code',
+        desc: 'A guided Colab notebook that installs Qiskit for you and walks through your first circuit.',
+        url: 'https://colab.research.google.com/github/utkarshh-singh/fall-fest-2025-website/blob/main/assets/hello-world.ipynb',
+      },
+      {
+        title: 'Qiskit Workshop Notebook',
+        type: 'Code',
+        desc: 'A second hands-on Colab walkthrough — good alternative pacing to the one above.',
+        url: 'https://colab.research.google.com/github/mtreinish/qiskit-workshop/blob/master/Workshop.ipynb',
+      },
+      {
+        title: 'Running Qiskit in Google Colab',
+        type: 'Docs',
+        desc: "Official guide for setting up Qiskit in Colab if you're starting from a blank notebook.",
+        url: 'https://quantum.cloud.ibm.com/docs/en/guides/online-lab-environments#google-colab',
       },
     ],
   },
@@ -61,13 +102,25 @@ export const RESOURCES = [
     ],
   },
   {
-    category: 'Math Foundations',
+    category: 'Math & Programming Foundations',
     items: [
       {
         title: 'Essence of Linear Algebra (3Blue1Brown)',
         type: 'Video',
         desc: 'The most intuitive linear algebra series out there — genuinely useful before diving into qubits.',
         url: 'https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab',
+      },
+      {
+        title: 'NumPy for Beginners',
+        type: 'Docs',
+        desc: "Qiskit leans on NumPy constantly — worth a skim if arrays/matrices are new to you.",
+        url: 'https://numpy.org/doc/stable/user/absolute_beginners.html',
+      },
+      {
+        title: 'Python Tutorial',
+        type: 'Docs',
+        desc: 'The official Python tutorial — a solid refresher if you need one before the workshops.',
+        url: 'https://docs.python.org/3/tutorial/',
       },
     ],
   },

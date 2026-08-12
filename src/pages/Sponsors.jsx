@@ -14,7 +14,7 @@ export default function Sponsors() {
         description="Qiskit Fall Fest at uOttawa is free to attend thanks to the generous support of these organizations."
       />
 
-      <SponsorGrid sponsors={SPONSORS} size="lg" />
+      <SponsorGrid sponsors={SPONSORS} />
 
       <Reveal>
         <GlassCard strong className="mt-16 p-10 text-center">

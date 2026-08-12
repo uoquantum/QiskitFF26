@@ -45,4 +45,4 @@ export const SOCIALS = [
   { label: 'Instagram', icon: 'instagram', url: 'https://www.instagram.com/uottawaquantum' },
 ]
 
-export const FOOTER_CREDIT = 'Built with ♥, by uOttawa Quantum Team'
+export const FOOTER_CREDIT = 'Built with ♥, by uOttawa Quantum Team & Cadmic'
