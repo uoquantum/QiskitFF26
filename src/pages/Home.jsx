@@ -13,6 +13,7 @@ import { SCHEDULE } from '../data/schedule.js'
 import { SPONSORS } from '../data/sponsors.js'
 import { HOME_COPY, STATS } from '../data/home.js'
 import { READY } from '../data/readiness.js'
+import { assetUrl } from '../lib/assetUrl.js'
 
 const QuantumCanvas = lazy(() => import('../components/three/QuantumCanvas.jsx'))
 
@@ -89,11 +90,19 @@ export default function Home() {
       </section>
 
       <section className="section">
-        <SectionHeading
-          eyebrow="About the fest"
-          title={HOME_COPY.aboutTitle}
-          description={EVENT.blurb}
-        />
+        <div className="grid gap-10 md:grid-cols-2 md:gap-14 items-start mb-6">
+          <SectionHeading
+            eyebrow="About the fest"
+            title={HOME_COPY.aboutTitle}
+            description={EVENT.blurb}
+          />
+          <Reveal delay={0.1}>
+            <div className="relative">
+              <div className="absolute -inset-8 -z-10 rounded-full bg-quantum-violet/20 blur-3xl" />
+              <img src={assetUrl('/hero2.svg')} alt="" className="w-full h-auto rounded-2xl" />
+            </div>
+          </Reveal>
+        </div>
 
         <div className="grid gap-6 md:grid-cols-2">
           <Reveal delay={0.05}>

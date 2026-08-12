@@ -9,5 +9,5 @@ export const ORGANIZERS = [
   { name: 'Samer Azar', photo: '/speakers/sa.jpeg', role: 'Co-Organizer • Honors BSc Physics (Biological Option)', url: 'https://www.linkedin.com/in/samer-azar-7b7a241b6' },
   { name: 'Tzu Yu (Joey) Wang', photo: '', role: 'Co-Organizer', url: '' },
   { name: 'Moveen Galathure', photo: '', role: 'Co-Organizer', url: '' },
-  { name: 'Joel Beckles', photo: '', role: 'Co-Organizer', url: '' },
+  { name: 'Joel Beckles', photo: '/speakers/jb.jpg', role: 'Co-Organizer', url: '' },
 ]

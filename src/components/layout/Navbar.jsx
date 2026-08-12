@@ -23,23 +23,23 @@ export default function Navbar() {
         scrolled ? 'glass-strong shadow-[0_1px_0_0_theme(colors.ink.DEFAULT/8%)]' : 'bg-transparent'
       }`}
     >
-      <nav className="mx-auto max-w-6xl px-6 md:px-10 h-16 flex items-center justify-between">
-        <NavLink to="/" className="flex items-center gap-2.5 group" onClick={() => setOpen(false)}>
+      <nav className="mx-auto max-w-6xl px-6 md:px-10 h-20 flex items-center justify-between">
+        <NavLink to="/" className="flex items-center gap-3 group min-w-0 shrink" onClick={() => setOpen(false)}>
           {LOGO_URL ? (
-            <img src={assetUrl(LOGO_URL)} alt={EVENT.name} className="h-8 w-8 rounded-full object-contain" />
+            <img src={assetUrl(LOGO_URL)} alt={EVENT.name} className="h-12 w-12 shrink-0 rounded-full object-contain" />
           ) : (
-            <span className="relative flex h-8 w-8 items-center justify-center">
+            <span className="relative flex h-12 w-12 shrink-0 items-center justify-center">
               <span className="absolute inset-0 rounded-full bg-quantum-violet/30 blur-md group-hover:bg-cyan-glow/40 transition-colors" />
-              <span className="relative h-2.5 w-2.5 rounded-full bg-cyan-glow shadow-glow-cyan" />
+              <span className="relative h-3.5 w-3.5 rounded-full bg-cyan-glow shadow-glow-cyan" />
             </span>
           )}
-          <span className="font-display font-medium tracking-tight text-ink text-[15px]">
+          <span className="font-display font-medium tracking-tight text-ink text-lg truncate">
             {EVENT.name}
-            <span className="text-ink-faint"> · {EVENT.org}</span>
+            <span className="text-ink-faint hidden sm:inline"> · {EVENT.org}</span>
           </span>
         </NavLink>
 
-        <div className="hidden md:flex items-center gap-0.5">
+        <div className="hidden lg:flex items-center gap-0.5">
           {NAV_LINKS.map((l) => (
             <NavLink
               key={l.to}

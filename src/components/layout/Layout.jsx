@@ -16,7 +16,7 @@ export default function Layout({ children }) {
       </div>
 
       <Navbar />
-      <main className="relative pt-16">{children}</main>
+      <main className="relative pt-20">{children}</main>
       <Footer />
       <FloatingDiscordButton />
     </div>

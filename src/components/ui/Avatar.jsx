@@ -7,7 +7,8 @@ function initials(name) {
 
 export default function Avatar({ name, photo, size = 'md' }) {
   const [failed, setFailed] = useState(false)
-  const sizeCls = size === 'lg' ? 'h-12 w-12 text-sm' : 'h-10 w-10 text-xs'
+  const sizeCls =
+    size === 'xl' ? 'h-24 w-24 text-xl' : size === 'lg' ? 'h-12 w-12 text-sm' : 'h-10 w-10 text-xs'
 
   if (photo && !failed) {
     return (

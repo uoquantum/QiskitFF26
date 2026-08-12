@@ -6,4 +6,5 @@
 export const READY = {
   schedule: false,
   speakers: false,
+  volunteers: false,
 }

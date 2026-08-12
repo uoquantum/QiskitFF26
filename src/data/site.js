@@ -1,7 +1,7 @@
 // Global event identity, nav links, and footer — edit freely, no code changes needed.
 
 export const EVENT = {
-  name: 'Qiskit Fall Fest',
+  name: 'Qiskit Fall Fest 2026',
   org: 'uOttawa',
   tagline: 'Learn. Build. Celebrate Quantum.',
   dates: 'Oct 3 – Oct 7, 2026',
