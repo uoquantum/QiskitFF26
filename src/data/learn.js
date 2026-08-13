@@ -4,6 +4,43 @@
 
 export const RESOURCES = [
   {
+    // Add notebooks by dropping .ipynb files in /notebooks (see notebooks/README.md)
+    // and linking https://colab.research.google.com/github/utkarshh-singh/QiskitFF26/blob/main/notebooks/<file>.ipynb
+    category: 'Try It In Your Browser (No Install)',
+    items: [
+      {
+        title: '1. Qiskit Fundamentals — Gates, Circuits & Visualization',
+        type: 'Code',
+        desc: 'Beginner · ~100–120 min. Qubits, superposition, circuits, gates, and visualizing states — start here.',
+        url: 'https://colab.research.google.com/github/utkarshh-singh/QiskitFF26/blob/main/notebooks/01_Qiskit_Fundamentals_Gates_Circuits_and_Visualization.ipynb',
+      },
+      {
+        title: '2. Measurement, Observables & Quantum Simulation',
+        type: 'Code',
+        desc: 'Beginner → Intermediate. Shots, probabilities, measurement bases, and Pauli observables with SparsePauliOp.',
+        url: 'https://colab.research.google.com/github/utkarshh-singh/QiskitFF26/blob/main/notebooks/02_Measurement_Observables_and_Quantum_Simulation.ipynb',
+      },
+      {
+        title: '3. Ideal and Noisy Simulation with Qiskit Aer',
+        type: 'Code',
+        desc: 'Intermediate. Simulate realistic hardware noise — bit-flip, depolarizing, thermal relaxation, and more.',
+        url: 'https://colab.research.google.com/github/utkarshh-singh/QiskitFF26/blob/main/notebooks/03_Ideal_and_Noisy_Simulation_with_Qiskit_Aer.ipynb',
+      },
+      {
+        title: '4. From Qiskit to IBM Quantum Hardware',
+        type: 'Code',
+        desc: 'Intermediate. Authenticate, pick a real backend, transpile, and run your circuit on actual quantum hardware.',
+        url: 'https://colab.research.google.com/github/utkarshh-singh/QiskitFF26/blob/main/notebooks/04_From_Qiskit_to_IBM_Quantum_Hardware.ipynb',
+      },
+      {
+        title: 'Running Qiskit in Google Colab',
+        type: 'Docs',
+        desc: "Official guide for setting up Qiskit in Colab if you're starting from a blank notebook.",
+        url: 'https://quantum.cloud.ibm.com/docs/en/guides/online-lab-environments#google-colab',
+      },
+    ],
+  },
+  {
     category: 'Quantum Computing & Qiskit Basics',
     items: [
       {
@@ -47,29 +84,6 @@ export const RESOURCES = [
         type: 'Docs',
         desc: 'Talks, workshops, and office hours happening across the Qiskit community.',
         url: 'https://www.ibm.com/quantum/events',
-      },
-    ],
-  },
-  {
-    category: 'Try It In Your Browser (No Install)',
-    items: [
-      {
-        title: 'Qiskit 101 — Hello World Notebook',
-        type: 'Code',
-        desc: 'A guided Colab notebook that installs Qiskit for you and walks through your first circuit.',
-        url: 'https://colab.research.google.com/github/utkarshh-singh/fall-fest-2025-website/blob/main/assets/hello-world.ipynb',
-      },
-      {
-        title: 'Qiskit Workshop Notebook',
-        type: 'Code',
-        desc: 'A second hands-on Colab walkthrough — good alternative pacing to the one above.',
-        url: 'https://colab.research.google.com/github/mtreinish/qiskit-workshop/blob/master/Workshop.ipynb',
-      },
-      {
-        title: 'Running Qiskit in Google Colab',
-        type: 'Docs',
-        desc: "Official guide for setting up Qiskit in Colab if you're starting from a blank notebook.",
-        url: 'https://quantum.cloud.ibm.com/docs/en/guides/online-lab-environments#google-colab',
       },
     ],
   },
