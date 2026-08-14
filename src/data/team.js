@@ -9,6 +9,6 @@ export const ORGANIZERS = [
   { name: 'Samer Azar', photo: '/speakers/sa.jpeg', role: 'Co-Organizer • Honors BSc Physics (Biological Option)', url: 'https://www.linkedin.com/in/samer-azar-7b7a241b6' },
   { name: 'Tzu Yu (Joey) Wang', photo: '', role: 'Co-Organizer • PhD Chemistry', url: '' },
   { name: 'Moveen Galathure', photo: '', role: 'Co-Organizer', url: '' },
-  { name: 'Joel Beckles', photo: '/speakers/jb.jpg', role: 'Co-Organizer • PhD Physics', url: '' },
+  { name: 'Joel Beckles', photo: '/speakers/jb.jpg', role: 'Co-Organizer • PhD Physics', url: 'https://www.linkedin.com/in/joel-beckles-684495168/' },
   { name: 'Samuel Aslan', photo: '/speakers/sam.jpg', role: 'Co-Organizer • MSc Mathematics', url: 'https://www.linkedin.com/in/samuel-aslan-4b6b152b4' },
 ]

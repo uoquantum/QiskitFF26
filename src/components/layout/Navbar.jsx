@@ -116,21 +116,34 @@ export default function Navbar() {
                 </NavLink>
               ))}
               <div className="my-2 border-t border-ink/10" />
-              {NAV_MORE.map((l) => (
-                <NavLink
-                  key={l.to}
-                  to={l.to}
-                  end={l.to === '/'}
-                  onClick={() => setOpen(false)}
-                  className={({ isActive }) =>
-                    `px-3 py-2.5 rounded-lg text-sm font-medium ${
-                      isActive ? 'text-cyan-strong bg-ink/5' : 'text-ink-muted'
-                    }`
-                  }
-                >
-                  {l.label}
-                </NavLink>
-              ))}
+              {NAV_MORE.map((l) =>
+                l.href ? (
+                  <a
+                    key={l.label}
+                    href={l.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    onClick={() => setOpen(false)}
+                    className="px-3 py-2.5 rounded-lg text-sm font-medium text-ink-muted"
+                  >
+                    {l.label} ↗
+                  </a>
+                ) : (
+                  <NavLink
+                    key={l.label}
+                    to={l.to}
+                    end={l.to === '/'}
+                    onClick={() => setOpen(false)}
+                    className={({ isActive }) =>
+                      `px-3 py-2.5 rounded-lg text-sm font-medium ${
+                        isActive ? 'text-cyan-strong bg-ink/5' : 'text-ink-muted'
+                      }`
+                    }
+                  >
+                    {l.label}
+                  </NavLink>
+                )
+              )}
               <NavLink to="/register" onClick={() => setOpen(false)} className="mt-2">
                 <span className="btn-glow w-full text-sm">Register</span>
               </NavLink>

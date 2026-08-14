@@ -49,19 +49,31 @@ export default function NavDropdown({ label, items }) {
             transition={{ duration: 0.18, ease: [0.22, 1, 0.36, 1] }}
             className="glass-strong absolute right-0 mt-2 w-48 rounded-2xl p-1.5 origin-top-right shadow-xl"
           >
-            {items.map((item) => (
-              <NavLink
-                key={item.to}
-                to={item.to}
-                className={({ isActive }) =>
-                  `block px-3.5 py-2.5 rounded-xl text-sm font-medium transition-colors ${
-                    isActive ? 'text-cyan-strong bg-ink/5' : 'text-ink-muted hover:text-ink hover:bg-ink/5'
-                  }`
-                }
-              >
-                {item.label}
-              </NavLink>
-            ))}
+            {items.map((item) =>
+              item.href ? (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="block px-3.5 py-2.5 rounded-xl text-sm font-medium text-ink-muted hover:text-ink hover:bg-ink/5 transition-colors"
+                >
+                  {item.label} ↗
+                </a>
+              ) : (
+                <NavLink
+                  key={item.label}
+                  to={item.to}
+                  className={({ isActive }) =>
+                    `block px-3.5 py-2.5 rounded-xl text-sm font-medium transition-colors ${
+                      isActive ? 'text-cyan-strong bg-ink/5' : 'text-ink-muted hover:text-ink hover:bg-ink/5'
+                    }`
+                  }
+                >
+                  {item.label}
+                </NavLink>
+              )
+            )}
           </motion.div>
         )}
       </AnimatePresence>

@@ -6,7 +6,7 @@ import react from '@vitejs/plugin-react'
 // If deploying to a custom domain or a <username>.github.io root repo -> base: '/'
 export default defineConfig({
   plugins: [react()],
-  base: '/QiskitFF26/',
+  base: '/',
   build: {
     outDir: 'dist',
     sourcemap: false,

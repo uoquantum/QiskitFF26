@@ -24,6 +24,7 @@ export const NAV_LINKS = [
 ]
 
 // Grouped under the "More" dropdown in the header.
+// Use `to` for internal pages, `href` for external links (opens in a new tab).
 export const NAV_MORE = [
   { to: '/learn', label: 'Learn' },
   { to: '/sponsors', label: 'Sponsors' },
@@ -31,6 +32,7 @@ export const NAV_MORE = [
   { to: '/about', label: 'About' },
   { to: '/faq', label: 'FAQ' },
   { to: '/contact', label: 'Contact' },
+  { href: 'https://2025.uoquantum.com', label: 'Fall Fest 2025' },
 ]
 
 export const CODE_OF_CONDUCT_URL = 'https://www.uoquantum.com/code-of-conduct'
