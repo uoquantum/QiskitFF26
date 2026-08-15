@@ -65,6 +65,16 @@
   }
 }
 
+@layer utilities {
+  .scrollbar-none {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+}
+
 @layer components {
   .glass {
     @apply bg-ink/[0.04] backdrop-blur-xl border border-ink/10;

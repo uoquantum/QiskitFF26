@@ -99,7 +99,9 @@ needed):
 1. **Create the sheet.** Go to [sheets.google.com](https://sheets.google.com)
    and make a new blank spreadsheet named something like
    "Qiskit Fall Fest Registrations". You don't need to create or name tabs
-   yourself — the script below creates **Participants**, **Volunteers**, and
+   yourself — the script below creates **Participants** (Timestamp | Name | Email | Status | Program | Local Attendance | Team Status | Background: Quantum | Background: Programming | Background: Qiskit | Background: Linear Algebra | Dietary | Accessibility
+), **Volunteers** (Timestamp | Name | Email | Phone | Background Notes | Background: Quantum | Background: Programming | Background: Qiskit | Background: Linear Algebra | Available Days | Help With | Dietary | Accessibility
+), and
    **Sponsors** tabs (with the right header row) automatically the first time
    each one is needed, so a missing/misnamed tab can't silently break
    submissions.
