@@ -21,12 +21,12 @@ export const NAV_LINKS = [
   { to: '/schedule', label: 'Schedule' },
   { to: '/speakers', label: 'Speakers' },
   { to: '/workshops', label: 'Workshops' },
+  { to: '/learn', label: 'Learn' },
 ]
 
 // Grouped under the "More" dropdown in the header.
 // Use `to` for internal pages, `href` for external links (opens in a new tab).
 export const NAV_MORE = [
-  { to: '/learn', label: 'Learn' },
   { to: '/sponsors', label: 'Sponsors' },
   { to: '/organizers', label: 'Organizers' },
   { to: '/about', label: 'About' },

@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { EVENT, NAV_LINKS, NAV_MORE, LOGO_URL } from '../../data/site.js'
-import ThemeToggle from '../ui/ThemeToggle.jsx'
 import NavDropdown from './NavDropdown.jsx'
 import { assetUrl } from '../../lib/assetUrl.js'
 
@@ -55,14 +54,13 @@ export default function Navbar() {
             </NavLink>
           ))}
           <NavDropdown label="More" items={NAV_MORE} />
-          <ThemeToggle className="ml-2" />
-          <NavLink to="/register" className="ml-2">
+          <NavLink to="/register" className="relative ml-2">
+            <span className="absolute -inset-1 -z-10 rounded-full bg-cyan-glow/50 blur-md animate-pulseGlow" />
             <span className="btn-glow !px-5 !py-2 text-sm">Register</span>
           </NavLink>
         </div>
 
         <div className="flex items-center gap-2 md:hidden">
-          <ThemeToggle />
           <button
             className="flex h-10 w-10 items-center justify-center rounded-full glass text-ink"
             onClick={() => setOpen((v) => !v)}
@@ -144,7 +142,8 @@ export default function Navbar() {
                   </NavLink>
                 )
               )}
-              <NavLink to="/register" onClick={() => setOpen(false)} className="mt-2">
+              <NavLink to="/register" onClick={() => setOpen(false)} className="relative mt-2">
+                <span className="absolute -inset-1 -z-10 rounded-full bg-cyan-glow/50 blur-md animate-pulseGlow" />
                 <span className="btn-glow w-full text-sm">Register</span>
               </NavLink>
             </div>

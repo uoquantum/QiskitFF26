@@ -2,6 +2,7 @@ import { Suspense, lazy } from 'react'
 import Navbar from './Navbar.jsx'
 import Footer from './Footer.jsx'
 import FloatingDiscordButton from '../ui/FloatingDiscordButton.jsx'
+import FloatingThemeToggle from '../ui/FloatingThemeToggle.jsx'
 
 const QubitLatticeCanvas = lazy(() => import('../three/QubitLattice.jsx'))
 
@@ -19,6 +20,7 @@ export default function Layout({ children }) {
       <main className="relative pt-20">{children}</main>
       <Footer />
       <FloatingDiscordButton />
+      <FloatingThemeToggle />
     </div>
   )
 }
