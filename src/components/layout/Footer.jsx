@@ -19,9 +19,9 @@ export default function Footer() {
           <Link to="/learn" className="hover:text-cyan-strong transition-colors">Learn</Link>
           <Link to="/faq" className="hover:text-cyan-strong transition-colors">FAQ</Link>
           <Link to="/contact" className="hover:text-cyan-strong transition-colors">Contact</Link>
-          <a href={CODE_OF_CONDUCT_URL} target="_blank" rel="noreferrer" className="hover:text-cyan-strong transition-colors">
+          <Link to={CODE_OF_CONDUCT_URL} className="hover:text-cyan-strong transition-colors">
             Code of Conduct
-          </a>
+          </Link>
         </div>
 
         <div className="flex items-center gap-3">

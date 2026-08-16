@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import SectionHeading from '../components/ui/SectionHeading.jsx'
 import GlassCard from '../components/ui/GlassCard.jsx'
@@ -372,9 +373,9 @@ export default function Register() {
                     onChange={update('agree')}
                   />
                   I agree to the{' '}
-                  <a href={CODE_OF_CONDUCT_URL} target="_blank" rel="noreferrer" className="text-cyan-text hover:text-cyan-strong underline underline-offset-2">
+                  <Link to={CODE_OF_CONDUCT_URL} target="_blank" rel="noopener" className="text-cyan-text hover:text-cyan-strong underline underline-offset-2">
                     Code of Conduct
-                  </a>
+                  </Link>
                 </label>
 
                 <button type="submit" disabled={status === 'loading'} className="btn-glow w-full sm:w-auto disabled:opacity-60">

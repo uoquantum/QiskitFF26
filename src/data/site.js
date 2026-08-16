@@ -35,7 +35,7 @@ export const NAV_MORE = [
   { href: 'https://2025.uoquantum.com', label: 'Fall Fest 2025' },
 ]
 
-export const CODE_OF_CONDUCT_URL = 'https://www.uoquantum.com/code-of-conduct'
+export const CODE_OF_CONDUCT_URL = '/code-of-conduct'
 
 // Site logo shown in the header next to the event name. Drop the file at
 // public/logo.svg (or .png) and set this to '/logo.svg'. Leave empty to keep

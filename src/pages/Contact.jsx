@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import SectionHeading from '../components/ui/SectionHeading.jsx'
 import GlassCard from '../components/ui/GlassCard.jsx'
 import Reveal from '../components/ui/Reveal.jsx'
@@ -51,9 +52,9 @@ export default function Contact() {
             <p className="text-sm text-ink-muted leading-relaxed">
               Photos and video may be taken during the event — you can opt out on the registration
               form. All attendees agree to our{' '}
-              <a href={CODE_OF_CONDUCT_URL} target="_blank" rel="noreferrer" className="text-cyan-text hover:text-cyan-strong underline underline-offset-2">
+              <Link to={CODE_OF_CONDUCT_URL} className="text-cyan-text hover:text-cyan-strong underline underline-offset-2">
                 Code of Conduct
-              </a>.
+              </Link>.
             </p>
           </GlassCard>
         </Reveal>

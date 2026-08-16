@@ -15,6 +15,7 @@ const Register = lazy(() => import('./pages/Register.jsx'))
 const Faq = lazy(() => import('./pages/Faq.jsx'))
 const About = lazy(() => import('./pages/About.jsx'))
 const Contact = lazy(() => import('./pages/Contact.jsx'))
+const CodeOfConduct = lazy(() => import('./pages/CodeOfConduct.jsx'))
 const NotFound = lazy(() => import('./pages/NotFound.jsx'))
 
 export default function App() {
@@ -36,6 +37,7 @@ export default function App() {
             <Route path="/faq" element={<PageTransition><Faq /></PageTransition>} />
             <Route path="/about" element={<PageTransition><About /></PageTransition>} />
             <Route path="/contact" element={<PageTransition><Contact /></PageTransition>} />
+            <Route path="/code-of-conduct" element={<PageTransition><CodeOfConduct /></PageTransition>} />
             <Route path="*" element={<PageTransition><NotFound /></PageTransition>} />
           </Routes>
         </AnimatePresence>
