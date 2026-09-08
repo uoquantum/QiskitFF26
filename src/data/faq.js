@@ -5,7 +5,7 @@ export const FAQS = [
   {
     category: 'General',
     q: 'Who can register?',
-    a: 'Talks and hands-on labs are open to everyone — students, faculty, alumni, industry folks, and curious beginners. The hackathon is student-focused: to compete for judging and prizes, teams must be made up of currently enrolled students. Non-students can still attend, mentor, or observe.',
+    a: 'Everyone is welcome — students, faculty, alumni, industry folks, and curious beginners can register for the talks, hands-on labs, and the hackathon. No prior quantum experience or student status required.',
   },
   { category: 'General', q: 'Does it cost anything?', a: 'No — registration is completely free.' },
   { category: 'General', q: 'Do I need prior quantum experience?', a: 'No. The weekend talks and labs are beginner-friendly and mentors are available throughout.' },
