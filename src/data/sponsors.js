@@ -42,5 +42,11 @@ export const SPONSORS = [
     url: 'https://www.pinq2.com/',
     desc: "Quebec's digital and quantum innovation platform, giving organizations access to classical, hybrid, and quantum computing power.",
   },
+  {
+    name: 'NRC',
+    logo: '/sponsors/NRC_logo3.png',
+    url: 'https://www.nrc.canada.ca/en',
+    desc: "The National Research Council of Canada — the country's largest federal research and development organization.",
+  },
   { placeholder: true, name: 'More soon' },
 ]
