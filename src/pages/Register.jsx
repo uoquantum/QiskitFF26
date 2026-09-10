@@ -7,6 +7,7 @@ import Reveal from '../components/ui/Reveal.jsx'
 import { EVENT, CODE_OF_CONDUCT_URL } from '../data/site.js'
 import {
   FORM_ENDPOINT,
+  FORM_NOTICE,
   ROLES,
   DIETARY_OPTIONS,
   STATUS_OPTIONS,
@@ -125,6 +126,17 @@ export default function Register() {
         title="Register for Fall Fest"
         description={`Join us for ${EVENT.dates} at ${EVENT.location} — as a participant, volunteer, or sponsor. Takes just a couple minutes.`}
       />
+
+      {FORM_NOTICE && (
+        <Reveal>
+          <div className="mb-8 flex gap-3 rounded-2xl border border-cyan-glow/30 bg-cyan-glow/5 px-5 py-4">
+            <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-cyan-glow/50 text-xs font-bold text-cyan-text">
+              i
+            </span>
+            <p className="text-sm text-ink-muted leading-relaxed">{FORM_NOTICE}</p>
+          </div>
+        </Reveal>
+      )}
 
       <Reveal>
         <GlassCard strong className="p-6 md:p-10 relative overflow-hidden">
