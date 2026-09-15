@@ -32,7 +32,7 @@ export const NAV_LINKS = [
 // Use `to` for internal pages, `href` for external links (opens in a new tab).
 export const NAV_MORE = [
   { to: '/sponsors', label: 'Sponsors' },
-  { to: '/organizers', label: 'Organizers' },
+  { to: '/team', label: 'Team' },
   { to: '/about', label: 'About' },
   { to: '/faq', label: 'FAQ' },
   { to: '/contact', label: 'Contact' },
