@@ -27,10 +27,10 @@ export default function About() {
 
       <div className="grid gap-6 sm:grid-cols-2 mb-16">
         <Reveal>
-          <Link to="/organizers">
+          <Link to="/team">
             <GlassCard glow className="p-8 h-full">
               <p className="eyebrow mb-2">Meet the team</p>
-              <h3 className="font-display text-xl text-ink mb-2">Organizing team</h3>
+              <h3 className="font-display text-xl text-ink mb-2">Organizers &amp; volunteers</h3>
               <p className="text-sm text-ink-muted">The students behind Fall Fest.</p>
               <span className="mt-4 inline-block text-sm text-cyan-text">See everyone →</span>
             </GlassCard>
