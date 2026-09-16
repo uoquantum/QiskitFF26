@@ -9,7 +9,6 @@ export const FORM_ENDPOINT = 'https://script.google.com/macros/s/AKfycbwkErjNIXF
 export const FORM_NOTICE =
   "This year's event is currently planned as in-person only. We're looking into a hybrid/online option — watch Discord for updates."
 
-
 // The three registration paths — each shows a different set of fields below.
 export const ROLES = [
   { key: 'participant', label: 'Participant', hint: 'Attending talks, labs, and/or the hackathon.' },
@@ -45,6 +44,7 @@ export const BACKGROUND_TOPICS = [
 // --- Participant fields ---
 export const STATUS_OPTIONS = [
   'uOttawa student',
+  'Carleton student',
   'Student, other university',
   'Faculty / researcher',
   'Industry / other',
