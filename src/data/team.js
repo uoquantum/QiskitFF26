@@ -7,7 +7,7 @@
 export const ORGANIZERS = [
   { name: 'Utkarsh Singh', photo: '/speakers/utkarsh.png', role: 'Lead Organizer • Quantum ML Researcher • Qiskit Advocate • Postdoctoral Fellow', url: 'https://www.linkedin.com/in/utkarsh-singhh/' },
   { name: 'Samer Azar', photo: '/speakers/sa.jpeg', role: 'Co-Organizer • Honours BSc Physics (Biological Option)', url: 'https://www.linkedin.com/in/samer-azar-7b7a241b6' },
-  { name: 'Tzu Yu (Joey) Wang', photo: '', role: 'Co-Organizer • PhD Chemistry', url: 'https://www.linkedin.com/in/tzu-yu-joey-wang-634320145/' },
+  { name: 'Tzu Yu (Joey) Wang', photo: '/speakers/joey.jpg', role: 'Co-Organizer • PhD Chemistry', url: 'https://www.linkedin.com/in/tzu-yu-joey-wang-634320145/' },
   { name: 'Moveen Galathure', photo: '/speakers/moveen.jpg', role: 'Co-Organizer • Honours BSc Physics', url: '' },
   { name: 'Joel Beckles', photo: '/speakers/jb.jpg', role: 'Co-Organizer • PhD Physics', url: 'https://www.linkedin.com/in/joel-beckles-684495168/' },
   { name: 'Samuel Aslan', photo: '/speakers/sam.jpg', role: 'Co-Organizer • MSc Mathematics', url: 'https://www.linkedin.com/in/samuel-aslan-4b6b152b4' },
