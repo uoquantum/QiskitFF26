@@ -4,7 +4,7 @@
 // "coming soon" placeholder instead of draft or guessed content.
 
 export const READY = {
-  schedule: false,
+  schedule: true,
   speakers: false,
   volunteers: true,
   // Hackathon challenges — the /challenges page also enforces an automatic
