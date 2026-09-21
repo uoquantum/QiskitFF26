@@ -28,6 +28,15 @@ export default function Schedule() {
       ) : (
         <>
           <Reveal>
+            <div className="mb-6 flex flex-wrap items-center gap-2.5 text-sm text-ink-faint">
+              <span className="font-mono text-[11px] uppercase tracking-wider px-2.5 py-1 rounded-full border border-ink/15 text-ink-muted">
+                Speakers TBD
+              </span>
+              <span>Talk titles and times are set — speaker names will be announced soon.</span>
+            </div>
+          </Reveal>
+
+          <Reveal>
             <div className="inline-flex glass rounded-full p-1 mb-10">
               {Object.entries(SCHEDULE).map(([key, d]) => (
                 <button
