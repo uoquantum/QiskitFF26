@@ -15,7 +15,7 @@ export const FAQS = [
   { category: 'General', q: 'Do I need to install anything?', a: "Nice to have: Python 3.11+, Git, and Jupyter. We'll also use browser tools like Colab, so you can take part without installing anything." },
   { category: 'General', q: 'Is there a Code of Conduct?', a: 'Yes. Be respectful, inclusive, and supportive — harassment or discrimination will not be tolerated.' },
 
-  { category: 'Hackathon', q: 'Can I join without a team?', a: 'Yes. Team formation happens Sunday, Oct 4 as part of the Hackathon Challenge Launch, plus ongoing on Discord. Solo participants are welcome but encouraged to team up (2–5 people per team).' },
+  { category: 'Hackathon', q: 'Can I join without a team?', a: 'Yes. Team formation happens online on Discord. Solo participants are welcome but encouraged to team up (2–5 people per team).' },
   { category: 'Hackathon', q: "What are this year's tracks?", a: 'Quantum Machine Learning, Quantum Chemistry, Materials Science, and Sustainability.' },
   { category: 'Hackathon', q: 'How do we submit?', a: 'Slides, a recorded video (max 5 minutes) presenting and explaining your slides, your GitHub repo, and any relevant docs if applicable. Submissions are due Wed, Oct 7, 2026 at 11:59 PM ET.' },
   { category: 'Hackathon', q: 'What are the judging criteria?', a: 'Impact, technical depth, learning, and presentation. We value clear problem framing, working demos, and thoughtful trade-offs.' },
