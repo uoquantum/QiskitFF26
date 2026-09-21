@@ -8,6 +8,9 @@ import { EVENT, CODE_OF_CONDUCT_URL } from '../data/site.js'
 import {
   FORM_ENDPOINT,
   FORM_NOTICE,
+  REGISTRATION_OPEN,
+  CLOSED_TITLE,
+  CLOSED_MESSAGE,
   ROLES,
   DIETARY_OPTIONS,
   STATUS_OPTIONS,
@@ -122,11 +125,33 @@ export default function Register() {
   return (
     <div className="section max-w-3xl">
       <SectionHeading
-        eyebrow="Free · Limited seats"
+        eyebrow={REGISTRATION_OPEN ? 'Free · Limited seats' : 'Free'}
         title="Register for Fall Fest"
-        description={`Join us for ${EVENT.dates} at ${EVENT.location} — as a participant, volunteer, or sponsor. Takes just a couple minutes.`}
+        description={
+          REGISTRATION_OPEN
+            ? `Join us for ${EVENT.dates} at ${EVENT.location} — as a participant, volunteer, or sponsor. Takes just a couple minutes.`
+            : `Qiskit Fall Fest is happening ${EVENT.dates} at ${EVENT.location}.`
+        }
       />
 
+      {!REGISTRATION_OPEN ? (
+        <Reveal>
+          <GlassCard strong className="p-10 md:p-14 text-center relative overflow-hidden">
+            <div className="absolute inset-0 bg-radial-glow opacity-50" />
+            <div className="relative">
+              <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-full bg-ink/10 border border-ink/20 text-2xl">
+                🔒
+              </div>
+              <h3 className="font-display text-2xl text-ink mb-3">{CLOSED_TITLE}</h3>
+              <p className="text-ink-muted max-w-md mx-auto mb-7">{CLOSED_MESSAGE}</p>
+              <a href={EVENT.discord} target="_blank" rel="noreferrer" className="btn-glow">
+                Join Discord
+              </a>
+            </div>
+          </GlassCard>
+        </Reveal>
+      ) : (
+        <>
       {FORM_NOTICE && (
         <Reveal>
           <div className="mb-8 flex gap-3 rounded-2xl border border-cyan-glow/30 bg-cyan-glow/5 px-5 py-4">
@@ -416,6 +441,8 @@ export default function Register() {
           </AnimatePresence>
         </GlassCard>
       </Reveal>
+        </>
+      )}
     </div>
   )
 }
