@@ -5,6 +5,14 @@
 // for how to set that up.
 export const FORM_ENDPOINT = 'https://script.google.com/macros/s/AKfycbwkErjNIXFMQErGA5aFT6QBg6ZbGz6zDPVahvap8GOEs-rd7i0u-49XcTMfeScpZ8kxUQ/exec'
 
+// Set to `false` to close registration — the form is replaced with a
+// closed-notice message (edit CLOSED_TITLE / CLOSED_MESSAGE below). Flip
+// back to `true` any time to reopen it.
+export const REGISTRATION_OPEN = true
+export const CLOSED_TITLE = 'Registration is closed'
+export const CLOSED_MESSAGE =
+  "Thanks to everyone who signed up — we can't wait to see you at Qiskit Fall Fest! Join our Discord for updates in the meantime."
+
 // Notice shown at the top of the registration form. Set to '' to hide it.
 export const FORM_NOTICE =
   "This year's event is currently planned as in-person only. We're looking into a hybrid/online option — watch Discord for updates."
