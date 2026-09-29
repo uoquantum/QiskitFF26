@@ -48,7 +48,7 @@ export const SPEAKERS = [
     name: 'Utkarsh Singh',
     photo: '/speakers/utkarsh.png',
     role: 'Postdoctoral Fellow → Quantum Application Scientist (from Oct 13)',
-    affiliation: 'University of Ottawa & National Research Council of Canada → NordQuantique',
+    affiliation: 'University of Ottawa & National Research Council of Canada → Nord Quantique',
     bio: 'Researches quantum machine learning and its real-world applications; lead organizer of Qiskit Fall Fest at uOttawa.',
     talk: 'Hands-on Qiskit Lab',
     links: [{ label: 'LinkedIn', url: 'https://www.linkedin.com/in/utkarsh-singhh/' }],
