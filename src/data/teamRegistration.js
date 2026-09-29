@@ -17,9 +17,6 @@ export const NOT_OPEN_TITLE = 'Team registration isn’t open yet'
 export const NOT_OPEN_MESSAGE =
   "We'll share this link once team formation is underway. Check Discord for when it opens."
 
-export const MENTORSHIP_OPTIONS = [
-  'None needed right now',
-  'Qiskit / implementation help',
-  'Domain / science help',
-  'Both',
-]
+// Shown as a note right under the GitHub repo field on the form.
+export const GITHUB_NOTE =
+  'Name your repo <team-name>_QFF2026_uottawa (e.g. entangled-ones_QFF2026_uottawa). The team lead should add every member as a collaborator so everyone can push.'

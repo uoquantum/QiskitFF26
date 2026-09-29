@@ -18,7 +18,7 @@ need to touch anything outside `src/data/`.
 | `faq.js` | FAQ questions & answers, grouped by `category` |
 | `contact.js` | Contact channel cards + venue map query/note |
 | `register.js` | Registration form endpoint + dropdown options |
-| `teamRegistration.js` | Team registration form (hidden page) — open/closed switch + mentorship options |
+| `teamRegistration.js` | Team registration form (hidden page) — open/closed switch + GitHub repo naming note |
 | `learn.js` | Learning resources page — links grouped by category |
 
 Each file exports plain arrays/objects — add, remove, or edit entries following the
@@ -149,13 +149,13 @@ needed):
            'Timestamp', 'Team Name', 'Lead Name', 'Lead Email', 'Lead Discord',
            'Member 2', 'Member 2 Email', 'Member 3', 'Member 3 Email',
            'Member 4', 'Member 4 Email', 'Member 5', 'Member 5 Email',
-           'Project Idea', 'Mentorship Needed',
+           'GitHub Repo', 'Project Idea', 'Needs Technical Help',
          ])
          sheet.appendRow([
            new Date(), data.team_name, data.lead_name, data.lead_email, data.lead_discord,
            data.member2_name, data.member2_email, data.member3_name, data.member3_email,
            data.member4_name, data.member4_email, data.member5_name, data.member5_email,
-           data.project_idea, data.mentorship,
+           data.github_repo, data.project_idea, data.needs_technical_help,
          ])
        } else if (data.role === 'volunteer') {
          const sheet = getOrCreateSheet(ss, 'Volunteers', [
@@ -237,8 +237,14 @@ separate from the individual Register page above. It's a **hidden page** at
 `/team-registration`: there's no nav link, it's only reachable via that direct
 URL or the "Register Team" button in the header. It asks for the team name,
 a team lead (name, email, optional Discord), up to 4 more members, an
-optional one-line project idea, and what kind of mentorship they'd like — see
-`TeamRegistration.jsx` and `teamRegistration.js`.
+optional GitHub repo link, an optional one-line project idea, and whether
+they'd like technical help — see `TeamRegistration.jsx` and
+`teamRegistration.js`.
+
+**Repo naming convention** (shown as a note under the field on the form):
+`<team-name>_QFF2026_uottawa`, and the team lead should add every member as
+a collaborator so everyone can push. Edit `GITHUB_NOTE` in
+`teamRegistration.js` if this wording changes.
 
 It reuses the **same** Google Apps Script Web App and the **same** Google
 Sheet as the main Register page — there's no second sheet or endpoint to set
