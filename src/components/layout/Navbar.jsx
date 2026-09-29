@@ -54,9 +54,9 @@ export default function Navbar() {
             </NavLink>
           ))}
           <NavDropdown label="More" items={NAV_MORE} />
-          <NavLink to="/register" className="relative ml-2">
+          <NavLink to="/team-registration" className="relative ml-2">
             <span className="absolute -inset-1 -z-10 rounded-full bg-cyan-glow/50 blur-md animate-pulseGlow" />
-            <span className="btn-glow !px-5 !py-2 text-sm">Register</span>
+            <span className="btn-glow !px-5 !py-2 text-sm">Register Team</span>
           </NavLink>
         </div>
 
@@ -142,9 +142,9 @@ export default function Navbar() {
                   </NavLink>
                 )
               )}
-              <NavLink to="/register" onClick={() => setOpen(false)} className="relative mt-2">
+              <NavLink to="/team-registration" onClick={() => setOpen(false)} className="relative mt-2">
                 <span className="absolute -inset-1 -z-10 rounded-full bg-cyan-glow/50 blur-md animate-pulseGlow" />
-                <span className="btn-glow w-full text-sm">Register</span>
+                <span className="btn-glow w-full text-sm">Register Team</span>
               </NavLink>
             </div>
           </motion.div>
