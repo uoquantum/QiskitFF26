@@ -9,7 +9,7 @@ import {
   TEAM_REGISTRATION_OPEN,
   NOT_OPEN_TITLE,
   NOT_OPEN_MESSAGE,
-  MENTORSHIP_OPTIONS,
+  GITHUB_NOTE,
 } from '../data/teamRegistration.js'
 
 // This page is intentionally not linked from the nav — only reachable via
@@ -34,8 +34,9 @@ const initialForm = {
   member4_email: '',
   member5_name: '',
   member5_email: '',
+  github_repo: '',
   project_idea: '',
-  mentorship: MENTORSHIP_OPTIONS[0],
+  needs_technical_help: false,
   confirm_registered: false,
 }
 
@@ -164,17 +165,32 @@ export default function TeamRegistration() {
                     </div>
                   ))}
 
-                  <Field label="Mentorship needed">
-                    <select className={inputCls} value={form.mentorship} onChange={update('mentorship')}>
-                      {MENTORSHIP_OPTIONS.map((o) => (
-                        <option key={o}>{o}</option>
-                      ))}
-                    </select>
-                  </Field>
+                  <div>
+                    <Field label="GitHub repository link (optional)">
+                      <input
+                        type="url"
+                        className={inputCls}
+                        placeholder="https://github.com/your-team/entangled-ones_QFF2026_uottawa"
+                        value={form.github_repo}
+                        onChange={update('github_repo')}
+                      />
+                    </Field>
+                    <p className="text-xs text-ink-faint mt-2 leading-relaxed">{GITHUB_NOTE}</p>
+                  </div>
 
                   <Field label="Project idea (optional)">
                     <input className={inputCls} placeholder="One line about what you're planning to build" value={form.project_idea} onChange={update('project_idea')} />
                   </Field>
+
+                  <label className="flex items-start gap-3 text-sm text-ink-muted cursor-pointer">
+                    <input
+                      type="checkbox"
+                      className="mt-0.5 h-4 w-4 rounded border-ink/20 bg-ink/5 accent-cyan-500"
+                      checked={form.needs_technical_help}
+                      onChange={update('needs_technical_help')}
+                    />
+                    We could use some technical help.
+                  </label>
 
                   <label className="flex items-start gap-3 text-sm text-ink-muted cursor-pointer">
                     <input
