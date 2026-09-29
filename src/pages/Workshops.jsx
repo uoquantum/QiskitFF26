@@ -3,6 +3,7 @@ import GlassCard from '../components/ui/GlassCard.jsx'
 import Reveal from '../components/ui/Reveal.jsx'
 import GlowButton from '../components/ui/GlowButton.jsx'
 import ComingSoon from '../components/ui/ComingSoon.jsx'
+import SpeakerLink from '../components/ui/SpeakerLink.jsx'
 import { EVENT } from '../data/site.js'
 import { TOOLS, JUDGING, FOCUS_AREAS, SUBMISSION_REQUIREMENTS } from '../data/workshops.js'
 import { SCHEDULE } from '../data/schedule.js'
@@ -11,7 +12,7 @@ import { READY } from '../data/readiness.js'
 const SKIP_TITLES = ['Check-in', 'Ceremony', 'Break', 'Lunch']
 
 function isHighlight(s) {
-  return s.detail && !SKIP_TITLES.some((skip) => s.title.includes(skip))
+  return (s.detail || s.speaker) && !SKIP_TITLES.some((skip) => s.title.includes(skip))
 }
 
 export default function Workshops() {
@@ -59,7 +60,8 @@ export default function Workshops() {
                 <GlassCard glow className="p-6 h-full">
                   <p className="font-mono text-xs text-cyan-text mb-2">{s.time}</p>
                   <h4 className="font-display text-ink mb-2">{s.title}</h4>
-                  <p className="text-sm text-ink-muted">{s.detail}</p>
+                  <SpeakerLink name={s.speaker} className="text-xs text-ink-faint font-mono mb-1 block" />
+                  {s.detail && <p className="text-sm text-ink-muted">{s.detail}</p>}
                 </GlassCard>
               </Reveal>
             ))}
@@ -74,7 +76,8 @@ export default function Workshops() {
                 <GlassCard glow className="p-6 h-full">
                   <p className="font-mono text-xs text-cyan-text mb-2">{s.time}</p>
                   <h4 className="font-display text-ink mb-2">{s.title}</h4>
-                  <p className="text-sm text-ink-muted">{s.detail}</p>
+                  <SpeakerLink name={s.speaker} className="text-xs text-ink-faint font-mono mb-1 block" />
+                  {s.detail && <p className="text-sm text-ink-muted">{s.detail}</p>}
                 </GlassCard>
               </Reveal>
             ))}

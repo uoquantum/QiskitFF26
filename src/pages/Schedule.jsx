@@ -4,6 +4,7 @@ import SectionHeading from '../components/ui/SectionHeading.jsx'
 import GlassCard from '../components/ui/GlassCard.jsx'
 import Reveal from '../components/ui/Reveal.jsx'
 import ComingSoon from '../components/ui/ComingSoon.jsx'
+import SpeakerLink from '../components/ui/SpeakerLink.jsx'
 import { SCHEDULE } from '../data/schedule.js'
 import { EVENT } from '../data/site.js'
 import { READY } from '../data/readiness.js'
@@ -27,15 +28,6 @@ export default function Schedule() {
         />
       ) : (
         <>
-          <Reveal>
-            <div className="mb-6 flex flex-wrap items-center gap-2.5 text-sm text-ink-faint">
-              <span className="font-mono text-[11px] uppercase tracking-wider px-2.5 py-1 rounded-full border border-ink/15 text-ink-muted">
-                Speakers TBD
-              </span>
-              <span>Talk titles and times are set — speaker names will be announced soon.</span>
-            </div>
-          </Reveal>
-
           <Reveal>
             <div className="inline-flex glass rounded-full p-1 mb-10">
               {Object.entries(SCHEDULE).map(([key, d]) => (
@@ -77,6 +69,7 @@ export default function Schedule() {
                   <span className="absolute -left-[38.5px] top-1.5 h-2.5 w-2.5 rounded-full bg-cyan-glow shadow-glow-cyan" />
                   <p className="font-mono text-xs text-cyan-text mb-1.5 tracking-wide">{s.time}</p>
                   <h4 className="font-display text-ink text-lg">{s.title}</h4>
+                  <SpeakerLink name={s.speaker} className="text-ink-muted text-sm mt-1 font-mono block" />
                   {s.detail && <p className="text-ink-muted text-sm mt-1">{s.detail}</p>}
                 </div>
               ))}
