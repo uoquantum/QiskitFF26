@@ -16,7 +16,7 @@ export const SCHEDULE = {
       { time: '9:30–10:00', title: 'Welcome & Check-in', detail: '' },
       { time: '10:00–11:00', title: 'Simple Intro to Quantum Mechanics', speaker: 'Jacob Krich', detail: '' },
       { time: '11:00–11:15', title: 'Break', detail: '' },
-      { time: '11:15–12:15', title: 'Qiskit 101', speaker: 'IBM Quantum Speaker', detail: '' },
+      { time: '11:15–12:15', title: 'Intro to Quantum Computing Using Qiskit', speaker: 'Gábor Samu', detail: '' },
       { time: '12:15–1:45 PM', title: 'Lunch', detail: '' },
       { time: '1:45–2:45 PM', title: 'Introduction to Quantum Machine Learning', speaker: 'Sohrab Ganjian', detail: '' },
       { time: '2:45–3:45 PM', title: 'Hands-on Qiskit Lab', speaker: 'Utkarsh Singh', detail: '' },
