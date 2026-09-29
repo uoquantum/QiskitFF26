@@ -5,7 +5,7 @@
 
 export const READY = {
   schedule: true,
-  speakers: false,
+  speakers: true,
   volunteers: true,
   // Hackathon challenges — the /challenges page also enforces an automatic
   // reveal time on top of this flag (see data/challenges.js). Flip this to
