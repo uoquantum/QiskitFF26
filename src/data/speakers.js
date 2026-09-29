@@ -18,6 +18,15 @@ export const SPEAKERS = [
     links: [{ label: 'Website', url: 'http://www.krichlab.ca/' }],
   },
   {
+    name: 'Steven Rayan',
+    photo: '/speakers/stevenrayan.jpg',
+    role: 'Professor, Mathematics & Statistics',
+    affiliation: 'University of Saskatchewan',
+    bio: 'Director of the Centre for Quantum Topology and Its Applications (quanTA); works on algebraic geometry, mathematical physics, and quantum information science.',
+    talk: 'Applications of Quantum Machine Learning',
+    links: [{ label: 'LinkedIn', url: 'https://www.linkedin.com/in/steven-rayan-448135339/' }],
+  },
+  {
     name: 'IBM Quantum Speaker',
     photo: '',
     role: 'To be announced',
@@ -43,15 +52,6 @@ export const SPEAKERS = [
     bio: 'Researches quantum machine learning and its real-world applications; lead organizer of Qiskit Fall Fest at uOttawa.',
     talk: 'Hands-on Qiskit Lab',
     links: [{ label: 'LinkedIn', url: 'https://www.linkedin.com/in/utkarsh-singhh/' }],
-  },
-  {
-    name: 'Steven Rayan',
-    photo: '',
-    role: 'Professor, Mathematics & Statistics',
-    affiliation: 'University of Saskatchewan',
-    bio: 'Director of the Centre for Quantum Topology and Its Applications (quanTA); works on algebraic geometry, mathematical physics, and quantum information science.',
-    talk: 'Applications of Quantum Machine Learning',
-    links: [{ label: 'LinkedIn', url: 'https://www.linkedin.com/in/steven-rayan-448135339/' }],
   },
   {
     name: 'Prince Kwao',
