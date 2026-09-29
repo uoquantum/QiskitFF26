@@ -56,7 +56,7 @@ export const SPEAKERS = [
   {
     name: 'Prince Kwao',
     photo: '/speakers/prince.jpeg',
-    role: 'PhD Student, Quantum Computing in Chemistry',
+    role: 'PhD Candidate, Quantum Computing in Chemistry',
     affiliation: 'University of North Dakota',
     bio: 'Develops scalable methods for ground- and excited-state calculations on quantum computers.',
     talk: 'Intro to Quantum Chemistry & VQE',
