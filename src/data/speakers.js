@@ -27,13 +27,13 @@ export const SPEAKERS = [
     links: [{ label: 'LinkedIn', url: 'https://www.linkedin.com/in/steven-rayan-448135339/' }],
   },
   {
-    name: 'IBM Quantum Speaker',
+    name: 'Gábor Samu',
     photo: '',
-    role: 'To be announced',
-    affiliation: 'IBM Quantum',
-    bio: "We're finalizing this speaker — check back soon.",
+    role: 'Senior Product Manager',
+    affiliation: 'IBM',
+    bio: "",
     talk: 'Qiskit 101',
-    links: [],
+    links: [{label: 'LinkedIn', url: 'https://www.linkedin.com/in/g%C3%A1bor-samu-1b41b42/'}],
   },
   {
     name: 'Sohrab Ganjian',
