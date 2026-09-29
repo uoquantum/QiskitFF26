@@ -166,8 +166,8 @@ export default function TeamRegistration() {
                   ))}
 
                   <div>
-                    <Field label="GitHub repository link (optional)">
-                      <input
+                    <Field label="GitHub repository link">
+                      <input required
                         type="url"
                         className={inputCls}
                         placeholder="https://github.com/your-team/entangled-ones_QFF2026_uottawa"
