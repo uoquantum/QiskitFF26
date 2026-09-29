@@ -19,7 +19,7 @@ export const SCHEDULE = {
       { time: '11:15–12:15', title: 'Quantum & Qiskit 101', speaker: 'Gábor Samu', detail: '' },
       { time: '12:15–1:45 PM', title: 'Lunch', detail: '' },
       { time: '1:45–2:45 PM', title: 'Introduction to Quantum Machine Learning', speaker: 'Sohrab Ganjian', detail: '' },
-      { time: '2:45–3:45 PM', title: 'Hands-on Qiskit Lab', speaker: 'Utkarsh Singh', detail: '' },
+      { time: '2:45–3:45 PM', title: 'Hands-on QML with Qiskit - Lab', speaker: 'Utkarsh Singh', detail: '' },
       { time: '3:45–4:00 PM', title: 'Break', detail: '' },
       { time: '4:00–5:00 PM', title: 'Applications of Quantum Machine Learning', speaker: 'Steven Rayan', detail: '' },
     ],
