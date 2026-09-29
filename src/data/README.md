@@ -18,6 +18,7 @@ need to touch anything outside `src/data/`.
 | `faq.js` | FAQ questions & answers, grouped by `category` |
 | `contact.js` | Contact channel cards + venue map query/note |
 | `register.js` | Registration form endpoint + dropdown options |
+| `teamRegistration.js` | Team registration form (hidden page) — open/closed switch + mentorship options |
 | `learn.js` | Learning resources page — links grouped by category |
 
 Each file exports plain arrays/objects — add, remove, or edit entries following the
@@ -140,7 +141,23 @@ needed):
        const data = JSON.parse(e.postData.contents)
        const ss = SpreadsheetApp.getActiveSpreadsheet()
 
-       if (data.role === 'volunteer') {
+       if (data.formType === 'team') {
+         // From the (currently unlisted) /team-registration page — see
+         // data/teamRegistration.js. Checked first since these submissions
+         // have no `role` field.
+         const sheet = getOrCreateSheet(ss, 'Teams', [
+           'Timestamp', 'Team Name', 'Lead Name', 'Lead Email', 'Lead Discord',
+           'Member 2', 'Member 2 Email', 'Member 3', 'Member 3 Email',
+           'Member 4', 'Member 4 Email', 'Member 5', 'Member 5 Email',
+           'Project Idea', 'Mentorship Needed',
+         ])
+         sheet.appendRow([
+           new Date(), data.team_name, data.lead_name, data.lead_email, data.lead_discord,
+           data.member2_name, data.member2_email, data.member3_name, data.member3_email,
+           data.member4_name, data.member4_email, data.member5_name, data.member5_email,
+           data.project_idea, data.mentorship,
+         ])
+       } else if (data.role === 'volunteer') {
          const sheet = getOrCreateSheet(ss, 'Volunteers', [
            'Timestamp', 'Name', 'Email', 'Phone', 'Background Notes',
          ].concat(BACKGROUND_HEADERS, ['Available Days', 'Help With', 'Dietary', 'Accessibility']))
@@ -212,3 +229,46 @@ run to see the exact error.
 can tell whether the submission succeeded or failed (unlike a plain Google
 Form, which can only fire-and-forget), so the success/error state on the
 Register page is a real signal, not a guess.
+
+## Team registration backend
+
+Once people have grouped into teams, they register the team as a unit here —
+separate from the individual Register page above. It's a **hidden page** at
+`/team-registration`: there's no nav link, it's only reachable via that direct
+URL or the "Register Team" button in the header. It asks for the team name,
+a team lead (name, email, optional Discord), up to 4 more members, an
+optional one-line project idea, and what kind of mentorship they'd like — see
+`TeamRegistration.jsx` and `teamRegistration.js`.
+
+It reuses the **same** Google Apps Script Web App and the **same** Google
+Sheet as the main Register page — there's no second sheet or endpoint to set
+up. Submissions land in their own **Teams** tab, auto-created on first
+submission (same self-healing pattern as Participants/Volunteers/Sponsors).
+
+**Step by step, to get it working:**
+
+1. **Update the Apps Script.** The full script in "Registration form backend"
+   above already includes the `Teams` tab logic (the
+   `if (data.formType === 'team')` block near the top of `doPost`). Paste that
+   whole script into `Code.gs`, replacing what's there now, if you haven't
+   already done this for the main form.
+2. **Redeploy.** Script edits don't go live by themselves — go to
+   **Deploy → Manage deployments**, click the pencil icon on your existing
+   deployment, choose **New version**, and click **Deploy**.
+3. **Flip the switch.** Open `src/data/teamRegistration.js` and set
+   `TEAM_REGISTRATION_OPEN` to `true`. While it's `false`, the page shows a
+   "not open yet" message instead of the form — useful for checking the page
+   looks right before anyone can actually submit.
+4. **Share the link.** Since it's not in the nav, send people straight to
+   `/team-registration` — or just point them at the "Register Team" button
+   in the header, which already links there.
+
+**Testing safely:** because the page is unlisted, you can flip
+`TEAM_REGISTRATION_OPEN` to `true`, look it over locally, and flip it back to
+`false` before pushing — nobody can stumble onto it without the direct link
+regardless.
+
+**If you add or rename a field** (say, a 6th team member), update both
+`initialForm` in `TeamRegistration.jsx` and the `Teams` block in the Apps
+Script to match — same rule as the main form: the order values are listed in
+`appendRow([...])` is the order they land in columns.
