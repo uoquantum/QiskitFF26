@@ -51,8 +51,18 @@ export default function Schedule() {
             </div>
           </Reveal>
 
-          <GlassCard className="p-6 md:p-8 mb-6">
+          <GlassCard className="p-6 md:p-8 mb-6 flex flex-wrap items-center justify-between gap-4">
             <p className="text-sm text-ink-muted font-mono">📍 {active.location}</p>
+            {active.zoom && (
+              <a
+                href={active.zoom}
+                target="_blank"
+                rel="noreferrer"
+                className="btn-ghost !px-5 !py-2 text-sm"
+              >
+                Join on Zoom ↗
+              </a>
+            )}
           </GlassCard>
 
           <AnimatePresence mode="wait">
