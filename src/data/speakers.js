@@ -9,7 +9,7 @@
 
 export const SPEAKERS = [
   {
-    name: 'Jacob Krich',
+    name: 'Prof. Jacob Krich',
     photo: '/speakers/jacob-krich.jpg',
     role: 'Professor of Physics',
     affiliation: 'University of Ottawa',
@@ -18,12 +18,12 @@ export const SPEAKERS = [
     links: [{ label: 'Website', url: 'http://www.krichlab.ca/' }],
   },
   {
-    name: 'Steven Rayan',
+    name: 'Prof. Steven Rayan',
     photo: '/speakers/stevenrayan.jpg',
     role: 'Professor, Mathematics & Statistics',
-    affiliation: 'University of Saskatchewan',
+    affiliation: 'Centre for Quantum Topology and Its Applications (quanTA) / University of Saskatchewan',
     bio: 'Director of the Centre for Quantum Topology and Its Applications (quanTA); works on algebraic geometry, mathematical physics, and quantum information science.',
-    talk: 'Applications of Quantum Machine Learning',
+    talk: 'Quantum Computing for Bio-Discovery',
     links: [{ label: 'LinkedIn', url: 'https://www.linkedin.com/in/steven-rayan-448135339/' }],
   },
   {
