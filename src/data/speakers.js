@@ -11,7 +11,7 @@ export const SPEAKERS = [
   {
     name: 'Prof. Jacob Krich',
     photo: '/speakers/jacob-krich.jpg',
-    role: 'Professor of Physics',
+    role: 'Professor, Physics',
     affiliation: 'University of Ottawa',
     bio: 'Theorist working on low-carbon energy sources and energy transfer in organic and biological systems, spanning photovoltaics and nonlinear optical spectroscopy.',
     talk: 'Simple Intro to Quantum Mechanics',
@@ -25,6 +25,15 @@ export const SPEAKERS = [
     bio: 'Director of the Centre for Quantum Topology and Its Applications (quanTA); works on algebraic geometry, mathematical physics, and quantum information science.',
     talk: 'Quantum Computing for Bio-Discovery',
     links: [{ label: 'LinkedIn', url: 'https://www.linkedin.com/in/steven-rayan-448135339/' }],
+  },
+  {
+    name: 'Prof. Ravi Bhardwaj',
+    photo: '/speakers/ravi.jpg',
+    role: 'Professor, Physics',
+    affiliation: 'University of Ottawa',
+    bio: '',
+    talk: 'Quantum at uOttawa',
+    links: [{ label: 'LinkedIn', url: 'https://www.uottawa.ca/faculty-science/professors/ravi-bhardwaj' }],
   },
   {
     name: 'Gábor Samu',
