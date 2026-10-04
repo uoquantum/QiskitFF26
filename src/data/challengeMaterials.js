@@ -8,9 +8,13 @@
 // link straight into this repo's own notebooks/ and prompts/hackathon/
 // folders via Colab, same as the rest of the site.
 export const MATERIALS = {
-  'Qiskit Fall Fest Challenge Hyperbolic Futures - quanTA USask.pdf': null,
-  'Reference - Hyperbolic Lattices.pdf': null,
-  'Reference - Hyperbolic QEC.pdf': null,
-  'McgillQFF 2026  -  Read-Only.pptx': null,
+  'Qiskit Fall Fest Challenge Hyperbolic Futures - quanTA USask.pdf':
+    'https://drive.google.com/file/d/1phuSlXTQ0WtaVM7go3gVQz2_PC1C9oK4/view',
+  'Reference - Hyperbolic Lattices.pdf':
+    'https://drive.google.com/file/d/1u1y9K3X9DtLmyBtHLhGAimxqyIGGILRn/view',
+  'Reference - Hyperbolic QEC.pdf':
+    'https://drive.google.com/file/d/1OHUv7pENYQfaefPFkPBh7m98JFxZLjKl/view',
+  'McgillQFF 2026  -  Read-Only.pptx':
+    'https://drive.google.com/file/d/1EsNzeUtomRfrIZ243qfOR2ahpjCmRET5/view',
   'Reference - Evolution of Qiskit Features.pdf': null,
 }
