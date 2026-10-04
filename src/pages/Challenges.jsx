@@ -6,7 +6,7 @@ import Reveal from '../components/ui/Reveal.jsx'
 import ComingSoon from '../components/ui/ComingSoon.jsx'
 import { EVENT } from '../data/site.js'
 import { READY } from '../data/readiness.js'
-import { CHALLENGES, CHALLENGES_REVEAL_AT, CHALLENGES_REVEAL_LABEL } from '../data/challenges.js'
+import { CHALLENGES, CHALLENGES_REVEAL_AT, CHALLENGES_REVEAL_LABEL, SUBMISSION_GUIDELINES_URL } from '../data/challenges.js'
 
 // This page isn't linked from the nav on purpose — it's only reachable via
 // the "View challenges" buttons. Even once READY.challenges is flipped to
@@ -49,19 +49,41 @@ export default function Challenges() {
             {CHALLENGES.map((c, i) => (
               <Reveal key={c.title} delay={i * 0.06}>
                 <GlassCard glow className="p-6 h-full flex flex-col">
-                  <p className="eyebrow mb-2">{c.track}</p>
+                  <div className="flex items-start justify-between gap-3 mb-2">
+                    <p className="eyebrow">{c.track}</p>
+                    <span className="font-mono text-xs text-ink-faint shrink-0">{c.number}</span>
+                  </div>
                   <h4 className="font-display text-ink mb-2">{c.title}</h4>
                   <p className="text-sm text-ink-muted leading-relaxed flex-1">{c.desc}</p>
+                  <a
+                    href={c.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="mt-4 text-xs text-cyan-text hover:text-cyan-strong transition-colors"
+                  >
+                    View full prompt ↗
+                  </a>
                 </GlassCard>
               </Reveal>
             ))}
           </div>
 
+          <Reveal>
+            <GlassCard strong className="mt-10 p-8 md:p-10 text-center">
+              <h3 className="font-display text-xl text-ink mb-3">Submission guidelines</h3>
+              <p className="text-ink-muted max-w-md mx-auto mb-7">
+                Every prompt and the open challenge share the same requirements — slides, a
+                public GitHub repo with a full README, due {EVENT.hackathonDeadline}.
+              </p>
+              <GlowButton href={SUBMISSION_GUIDELINES_URL}>Read submission guidelines ↗</GlowButton>
+            </GlassCard>
+          </Reveal>
+
           {EVENT.hackathonRepo && (
             <Reveal>
-              <div className="mt-10 text-center">
+              <div className="mt-8 text-center">
                 <GlowButton href={EVENT.hackathonRepo} variant="ghost">
-                  View starter repo on GitHub ↗
+                  Browse all prompts on GitHub ↗
                 </GlowButton>
               </div>
             </Reveal>
