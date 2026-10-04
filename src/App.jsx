@@ -1,24 +1,26 @@
-import { Suspense, lazy } from 'react'
+import { Suspense } from 'react'
 import { Routes, Route, Navigate, useLocation } from 'react-router-dom'
 import { AnimatePresence } from 'framer-motion'
 import Layout from './components/layout/Layout.jsx'
 import PageTransition from './components/layout/PageTransition.jsx'
+import { lazyRetry } from './lib/lazyRetry.js'
 
-const Home = lazy(() => import('./pages/Home.jsx'))
-const Schedule = lazy(() => import('./pages/Schedule.jsx'))
-const Speakers = lazy(() => import('./pages/Speakers.jsx'))
-const Workshops = lazy(() => import('./pages/Workshops.jsx'))
-const Learn = lazy(() => import('./pages/Learn.jsx'))
-const Sponsors = lazy(() => import('./pages/Sponsors.jsx'))
-const Team = lazy(() => import('./pages/Team.jsx'))
-const Register = lazy(() => import('./pages/Register.jsx'))
-const Faq = lazy(() => import('./pages/Faq.jsx'))
-const About = lazy(() => import('./pages/About.jsx'))
-const Contact = lazy(() => import('./pages/Contact.jsx'))
-const CodeOfConduct = lazy(() => import('./pages/CodeOfConduct.jsx'))
-const Challenges = lazy(() => import('./pages/Challenges.jsx'))
-const TeamRegistration = lazy(() => import('./pages/TeamRegistration.jsx'))
-const NotFound = lazy(() => import('./pages/NotFound.jsx'))
+const Home = lazyRetry(() => import('./pages/Home.jsx'))
+const Schedule = lazyRetry(() => import('./pages/Schedule.jsx'))
+const Speakers = lazyRetry(() => import('./pages/Speakers.jsx'))
+const Workshops = lazyRetry(() => import('./pages/Workshops.jsx'))
+const Learn = lazyRetry(() => import('./pages/Learn.jsx'))
+const Sponsors = lazyRetry(() => import('./pages/Sponsors.jsx'))
+const Team = lazyRetry(() => import('./pages/Team.jsx'))
+const Register = lazyRetry(() => import('./pages/Register.jsx'))
+const Faq = lazyRetry(() => import('./pages/Faq.jsx'))
+const About = lazyRetry(() => import('./pages/About.jsx'))
+const Contact = lazyRetry(() => import('./pages/Contact.jsx'))
+const CodeOfConduct = lazyRetry(() => import('./pages/CodeOfConduct.jsx'))
+const Challenges = lazyRetry(() => import('./pages/Challenges.jsx'))
+const ChallengePrompt = lazyRetry(() => import('./pages/ChallengePrompt.jsx'))
+const TeamRegistration = lazyRetry(() => import('./pages/TeamRegistration.jsx'))
+const NotFound = lazyRetry(() => import('./pages/NotFound.jsx'))
 
 export default function App() {
   const location = useLocation()
@@ -42,6 +44,7 @@ export default function App() {
             <Route path="/contact" element={<PageTransition><Contact /></PageTransition>} />
             <Route path="/code-of-conduct" element={<PageTransition><CodeOfConduct /></PageTransition>} />
             <Route path="/challenges" element={<PageTransition><Challenges /></PageTransition>} />
+            <Route path="/challenges/:slug" element={<PageTransition><ChallengePrompt /></PageTransition>} />
             <Route path="/team-registration" element={<PageTransition><TeamRegistration /></PageTransition>} />
             <Route path="*" element={<PageTransition><NotFound /></PageTransition>} />
           </Routes>
