@@ -31,7 +31,7 @@ export const SPEAKERS = [
     photo: '/speakers/ravi.jpg',
     role: 'Professor, Physics',
     affiliation: 'University of Ottawa',
-    bio: '',
+    bio: 'Leads the Extreme Ultrafast Photonics group at the University of Ottawa, studying intense light-matter interaction from attosecond science to laser-based microfabrication.',
     talk: 'Quantum at uOttawa',
     links: [{ label: 'LinkedIn', url: 'https://www.uottawa.ca/faculty-science/professors/ravi-bhardwaj' }],
   },
