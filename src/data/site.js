@@ -31,6 +31,7 @@ export const NAV_LINKS = [
 // Grouped under the "More" dropdown in the header.
 // Use `to` for internal pages, `href` for external links (opens in a new tab).
 export const NAV_MORE = [
+  { to: '/challenges', label: 'Challenges' },
   { to: '/sponsors', label: 'Sponsors' },
   { to: '/team', label: 'Team' },
   { to: '/about', label: 'About' },
