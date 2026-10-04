@@ -11,5 +11,5 @@ export const READY = {
   // reveal time on top of this flag (see data/challenges.js). Flip this to
   // true once CHALLENGES is actually filled in; the page stays hidden until
   // BOTH this is true AND the reveal time has passed.
-  challenges: false,
+  challenges: true,
 }
