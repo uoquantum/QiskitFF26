@@ -1,7 +1,7 @@
 import { MATERIALS } from '../data/challengeMaterials.js'
 
-const COLAB_BASE = 'https://colab.research.google.com/github/utkarshh-singh/QiskitFF26/blob/main'
-const GITHUB_BLOB_BASE = 'https://github.com/utkarshh-singh/QiskitFF26/blob/main'
+const COLAB_BASE = 'https://colab.research.google.com/github/uoquantum/QiskitFF26/blob/main'
+const GITHUB_BLOB_BASE = 'https://github.com/uoquantum/QiskitFF26/blob/main'
 
 // Resolves a relative link found inside a PROMPT.md (or SUBMISSION_GUIDELINES.md)
 // file into something the site can actually point at:
