@@ -8,10 +8,10 @@ import { EVENT } from '../data/site.js'
 import { READY } from '../data/readiness.js'
 import { CHALLENGES, CHALLENGES_REVEAL_AT, CHALLENGES_REVEAL_LABEL, SUBMISSION_GUIDELINES_URL } from '../data/challenges.js'
 
-// This page isn't linked from the nav on purpose — it's only reachable via
-// the "View challenges" buttons. Even once READY.challenges is flipped to
-// true, it keeps showing "not available yet" until CHALLENGES_REVEAL_AT
-// passes, so it's safe to fill in challenges.js and flip the flag early.
+// This page is linked from the nav (see NAV_MORE in data/site.js). Even
+// once READY.challenges is flipped to true, it keeps showing "not available
+// yet" until CHALLENGES_REVEAL_AT passes, so it's safe to fill in
+// challenges.js and flip the flag early without it leaking before reveal.
 function useRevealTimeReached() {
   const target = new Date(CHALLENGES_REVEAL_AT).getTime()
   const [reached, setReached] = useState(() => Date.now() >= target)
