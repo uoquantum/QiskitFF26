@@ -38,7 +38,7 @@ export const SCHEDULE = {
       { time: '1:00–2:00 PM', title: 'Lunch', detail: '' },
       { time: '2:00–3:00', title: 'Quantum at uOttawa', speaker: 'Prof. Ravi Bhardwaj', detail: '' },
       { time: '3:00–3:45 PM', title: 'Hackathon Reveal', detail: "This year's tracks and how the hackathon build week will work." },
-      { time: '2:45–3:30 PM', title: 'Technical Help / Open Q&A', detail: '' },
+      { time: '3:45–4:30 PM', title: 'Technical Help / Open Q&A', detail: '' },
     ],
   },
   hackathonWeek: {
