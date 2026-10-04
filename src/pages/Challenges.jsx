@@ -1,35 +1,19 @@
-import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import SectionHeading from '../components/ui/SectionHeading.jsx'
 import GlassCard from '../components/ui/GlassCard.jsx'
 import GlowButton from '../components/ui/GlowButton.jsx'
 import Reveal from '../components/ui/Reveal.jsx'
 import ComingSoon from '../components/ui/ComingSoon.jsx'
 import { EVENT } from '../data/site.js'
-import { READY } from '../data/readiness.js'
-import { CHALLENGES, CHALLENGES_REVEAL_AT, CHALLENGES_REVEAL_LABEL, SUBMISSION_GUIDELINES_URL } from '../data/challenges.js'
+import { CHALLENGES, CHALLENGES_REVEAL_LABEL } from '../data/challenges.js'
+import { useChallengesRevealed } from '../lib/useChallengesReveal.js'
 
 // This page is linked from the nav (see NAV_MORE in data/site.js). Even
 // once READY.challenges is flipped to true, it keeps showing "not available
 // yet" until CHALLENGES_REVEAL_AT passes, so it's safe to fill in
 // challenges.js and flip the flag early without it leaking before reveal.
-function useRevealTimeReached() {
-  const target = new Date(CHALLENGES_REVEAL_AT).getTime()
-  const [reached, setReached] = useState(() => Date.now() >= target)
-
-  useEffect(() => {
-    if (reached) return
-    const id = setInterval(() => {
-      if (Date.now() >= target) setReached(true)
-    }, 30_000)
-    return () => clearInterval(id)
-  }, [reached, target])
-
-  return reached
-}
-
 export default function Challenges() {
-  const timeReached = useRevealTimeReached()
-  const revealed = READY.challenges && timeReached
+  const revealed = useChallengesRevealed()
 
   return (
     <div className="section">
@@ -55,14 +39,12 @@ export default function Challenges() {
                   </div>
                   <h4 className="font-display text-ink mb-2">{c.title}</h4>
                   <p className="text-sm text-ink-muted leading-relaxed flex-1">{c.desc}</p>
-                  <a
-                    href={c.url}
-                    target="_blank"
-                    rel="noreferrer"
+                  <Link
+                    to={`/challenges/${c.slug}`}
                     className="mt-4 text-xs text-cyan-text hover:text-cyan-strong transition-colors"
                   >
-                    View full prompt ↗
-                  </a>
+                    View full prompt →
+                  </Link>
                 </GlassCard>
               </Reveal>
             ))}
@@ -75,7 +57,7 @@ export default function Challenges() {
                 Every prompt and the open challenge share the same requirements — slides, a
                 public GitHub repo with a full README, due {EVENT.hackathonDeadline}.
               </p>
-              <GlowButton href={SUBMISSION_GUIDELINES_URL}>Read submission guidelines ↗</GlowButton>
+              <GlowButton to="/challenges/submission-guidelines">Read submission guidelines</GlowButton>
             </GlassCard>
           </Reveal>
 
