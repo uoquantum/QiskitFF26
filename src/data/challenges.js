@@ -13,7 +13,7 @@
 export const CHALLENGES_REVEAL_AT = '2026-10-04T15:30:00-04:00'
 export const CHALLENGES_REVEAL_LABEL = 'Sun, Oct 4, 2026 · 3:30 PM ET'
 
-const REPO = 'https://github.com/uoquantum/QiskitFF26/src/data/prompts/hackathon'
+const REPO = 'https://github.com/uoquantum/QiskitFF26/prompts/hackathon'
 
 export const SUBMISSION_GUIDELINES_URL = `${REPO}/SUBMISSION_GUIDELINES.md`
 
