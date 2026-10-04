@@ -5,32 +5,32 @@
 export const RESOURCES = [
   {
     // Add notebooks by dropping .ipynb files in /notebooks (see notebooks/README.md)
-    // and linking https://colab.research.google.com/github/utkarshh-singh/QiskitFF26/blob/main/notebooks/<file>.ipynb
+    // and linking https://colab.research.google.com/github/uoquantum/QiskitFF26/blob/main/notebooks/<file>.ipynb
     category: 'Try It In Your Browser (No Install)',
     items: [
       {
         title: '1. Qiskit Fundamentals — Gates, Circuits & Visualization',
         type: 'Code',
         desc: 'Beginner · ~100–120 min. Qubits, superposition, circuits, gates, and visualizing states — start here.',
-        url: 'https://colab.research.google.com/github/utkarshh-singh/QiskitFF26/blob/main/notebooks/01_Qiskit_Fundamentals_Gates_Circuits_and_Visualization.ipynb',
+        url: 'https://colab.research.google.com/github/uoquantum/QiskitFF26/blob/main/notebooks/01_Qiskit_Fundamentals_Gates_Circuits_and_Visualization.ipynb',
       },
       {
         title: '2. Measurement, Observables & Quantum Simulation',
         type: 'Code',
         desc: 'Beginner → Intermediate. Shots, probabilities, measurement bases, and Pauli observables with SparsePauliOp.',
-        url: 'https://colab.research.google.com/github/utkarshh-singh/QiskitFF26/blob/main/notebooks/02_Measurement_Observables_and_Quantum_Simulation.ipynb',
+        url: 'https://colab.research.google.com/github/uoquantum/QiskitFF26/blob/main/notebooks/02_Measurement_Observables_and_Quantum_Simulation.ipynb',
       },
       {
         title: '3. Ideal and Noisy Simulation with Qiskit Aer',
         type: 'Code',
         desc: 'Intermediate. Simulate realistic hardware noise — bit-flip, depolarizing, thermal relaxation, and more.',
-        url: 'https://colab.research.google.com/github/utkarshh-singh/QiskitFF26/blob/main/notebooks/03_Ideal_and_Noisy_Simulation_with_Qiskit_Aer.ipynb',
+        url: 'https://colab.research.google.com/github/uoquantum/QiskitFF26/blob/main/notebooks/03_Ideal_and_Noisy_Simulation_with_Qiskit_Aer.ipynb',
       },
       {
         title: '4. From Qiskit to IBM Quantum Hardware',
         type: 'Code',
         desc: 'Intermediate. Authenticate, pick a real backend, transpile, and run your circuit on actual quantum hardware.',
-        url: 'https://colab.research.google.com/github/utkarshh-singh/QiskitFF26/blob/main/notebooks/04_From_Qiskit_to_IBM_Quantum_Hardware.ipynb',
+        url: 'https://colab.research.google.com/github/uoquantum/QiskitFF26/blob/main/notebooks/04_From_Qiskit_to_IBM_Quantum_Hardware.ipynb',
       },
       {
         title: 'Running Qiskit in Google Colab',

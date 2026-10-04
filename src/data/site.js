@@ -14,7 +14,7 @@ export const EVENT = {
   // This year's challenge prompts live in this repo's own prompts/hackathon
   // folder. Only shown on the /challenges page once it's revealed (see
   // data/challenges.js).
-  hackathonRepo: 'https://github.com/utkarshh-singh/QiskitFF26/tree/main/prompts/hackathon',
+  hackathonRepo: 'https://github.com/uoquantum/QiskitFF26/tree/main/prompts/hackathon',
   blurb:
     "Qiskit Fall Fest is a student-run celebration of learning, making, and community building. This year marks a decade of quantum computing on the cloud, and the edition is focused on Quantum Machine Learning, Quantum Chemistry, Materials Science, and Sustainability — bringing together curious beginners, builders, and mentors for a weekend of talks and hands-on labs, followed by a hackathon build week, all powered by IBM Quantum and the uOttawa community.",
 }
