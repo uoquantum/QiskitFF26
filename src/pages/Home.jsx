@@ -8,11 +8,12 @@ import Reveal from '../components/ui/Reveal.jsx'
 import SponsorMarquee from '../components/ui/SponsorMarquee.jsx'
 import ComingSoon from '../components/ui/ComingSoon.jsx'
 import { EVENT } from '../data/site.js'
-import { AUDIENCE, LEARN, FOCUS_AREAS } from '../data/workshops.js'
+import { LEARN, FOCUS_AREAS } from '../data/workshops.js'
 import { SCHEDULE } from '../data/schedule.js'
 import { SPONSORS } from '../data/sponsors.js'
 import { HOME_COPY, STATS } from '../data/home.js'
 import { WINNERS } from '../data/winners.js'
+import { GALLERY_IMAGES } from '../lib/galleryImages.js'
 import { READY } from '../data/readiness.js'
 import { assetUrl } from '../lib/assetUrl.js'
 
@@ -132,76 +133,6 @@ export default function Home() {
             </Reveal>
           ))}
         </div>
-
-        <div className="grid gap-6 md:grid-cols-2 mt-6">
-          <Reveal delay={0.05}>
-            <GlassCard className="p-8 h-full">
-              <h4 className="font-display text-ink mb-4">Who should attend</h4>
-              <ul className="space-y-3">
-                {AUDIENCE.map((a) => (
-                  <li key={a} className="flex gap-3 text-sm text-ink-muted leading-relaxed">
-                    <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-glow" />
-                    {a}
-                  </li>
-                ))}
-              </ul>
-            </GlassCard>
-          </Reveal>
-          <Reveal delay={0.15}>
-            <GlassCard className="p-8 h-full">
-              <h4 className="font-display text-ink mb-4">What you'll learn</h4>
-              <ul className="space-y-3">
-                {LEARN.map((a) => (
-                  <li key={a} className="flex gap-3 text-sm text-ink-muted leading-relaxed">
-                    <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-quantum-violet" />
-                    {a}
-                  </li>
-                ))}
-              </ul>
-            </GlassCard>
-          </Reveal>
-        </div>
-      </section>
-
-      <section className="section !pt-0">
-        <SectionHeading eyebrow="How it flows" title="Schedule at a glance" />
-        {!READY.schedule ? (
-          <ComingSoon compact title="Detailed schedule coming soon" message="The dates are locked in — session-by-session details are on the way." />
-        ) : (
-          <div className="grid gap-6 md:grid-cols-3">
-            {Object.values(SCHEDULE).map((day, i) => (
-              <Reveal key={day.label} delay={i * 0.1}>
-                <GlassCard className="p-8 h-full">
-                  <p className="eyebrow mb-1">{day.theme}</p>
-                  <h4 className="font-display text-lg text-ink mb-4">{day.label}</h4>
-                  <ul className="space-y-2.5">
-                    {day.sessions.slice(0, 4).map((s) => (
-                      <li key={s.time} className="flex gap-4 text-sm">
-                        <span className="font-mono text-ink-faint shrink-0 w-24">{s.time}</span>
-                        <span className="text-ink-muted">{s.title}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <Link to="/schedule" className="mt-6 inline-block text-sm text-cyan-text hover:text-cyan-strong transition-colors">
-                    View full schedule →
-                  </Link>
-                </GlassCard>
-              </Reveal>
-            ))}
-          </div>
-        )}
-      </section>
-
-      <section className="section !pt-0">
-        <SectionHeading eyebrow="With thanks to" title="Sponsors & partners" align="center" />
-        <SponsorMarquee sponsors={SPONSORS} />
-        <Reveal>
-          <div className="mt-8 text-center">
-            <Link to="/sponsors" className="text-sm text-cyan-text hover:text-cyan-strong transition-colors">
-              Meet all our sponsors →
-            </Link>
-          </div>
-        </Reveal>
       </section>
 
       <section className="section !pt-0">
@@ -254,6 +185,87 @@ export default function Home() {
             <a href={EVENT.discord} target="_blank" rel="noreferrer" className="btn-ghost">
               Join Discord
             </a>
+          </div>
+        </Reveal>
+      </section>
+
+      <section className="section !pt-0">
+        <SectionHeading eyebrow="Memories" title="Event gallery" align="center" />
+        <div className="grid gap-4 grid-cols-2 md:grid-cols-3">
+          {GALLERY_IMAGES.length > 0
+            ? GALLERY_IMAGES.map((src, i) => (
+                <Reveal key={src} delay={i * 0.05}>
+                  <img src={src} alt="" className="w-full aspect-square rounded-xl object-cover" />
+                </Reveal>
+              ))
+            : Array.from({ length: 6 }).map((_, i) => (
+                <Reveal key={i} delay={i * 0.05}>
+                  <div className="w-full aspect-square rounded-xl border border-dashed border-ink/15 bg-ink/[0.03] flex items-center justify-center">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-ink-faint">
+                      <path d="M4 7h3l1.5-2h7L17 7h3a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1Z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
+                      <circle cx="12" cy="13" r="3.25" stroke="currentColor" strokeWidth="1.5" />
+                    </svg>
+                  </div>
+                </Reveal>
+              ))}
+        </div>
+      </section>
+
+      <section className="section !pt-0">
+        <div className="max-w-xl mx-auto">
+          <Reveal>
+            <GlassCard className="p-8">
+              <h4 className="font-display text-ink mb-4 text-center">What you'll learn</h4>
+              <ul className="space-y-3">
+                {LEARN.map((a) => (
+                  <li key={a} className="flex gap-3 text-sm text-ink-muted leading-relaxed">
+                    <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-quantum-violet" />
+                    {a}
+                  </li>
+                ))}
+              </ul>
+            </GlassCard>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="section !pt-0">
+        <SectionHeading eyebrow="How it flows" title="Schedule at a glance" />
+        {!READY.schedule ? (
+          <ComingSoon compact title="Detailed schedule coming soon" message="The dates are locked in — session-by-session details are on the way." />
+        ) : (
+          <div className="grid gap-6 md:grid-cols-3">
+            {Object.values(SCHEDULE).map((day, i) => (
+              <Reveal key={day.label} delay={i * 0.1}>
+                <GlassCard className="p-8 h-full">
+                  <p className="eyebrow mb-1">{day.theme}</p>
+                  <h4 className="font-display text-lg text-ink mb-4">{day.label}</h4>
+                  <ul className="space-y-2.5">
+                    {day.sessions.slice(0, 4).map((s) => (
+                      <li key={s.time} className="flex gap-4 text-sm">
+                        <span className="font-mono text-ink-faint shrink-0 w-24">{s.time}</span>
+                        <span className="text-ink-muted">{s.title}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <Link to="/schedule" className="mt-6 inline-block text-sm text-cyan-text hover:text-cyan-strong transition-colors">
+                    View full schedule →
+                  </Link>
+                </GlassCard>
+              </Reveal>
+            ))}
+          </div>
+        )}
+      </section>
+
+      <section className="section !pt-0">
+        <SectionHeading eyebrow="With thanks to" title="Sponsors & partners" align="center" />
+        <SponsorMarquee sponsors={SPONSORS} />
+        <Reveal>
+          <div className="mt-8 text-center">
+            <Link to="/sponsors" className="text-sm text-cyan-text hover:text-cyan-strong transition-colors">
+              Meet all our sponsors →
+            </Link>
           </div>
         </Reveal>
       </section>
