@@ -20,6 +20,7 @@ need to touch anything outside `src/data/`.
 | `register.js` | Registration form endpoint + dropdown options |
 | `teamRegistration.js` | Team registration form (hidden page) — open/closed switch + GitHub repo naming note |
 | `learn.js` | Learning resources page — links grouped by category |
+| `winners.js` | Hackathon winners shown on Home — place, team name, optional photo |
 
 Each file exports plain arrays/objects — add, remove, or edit entries following the
 existing shape and the corresponding page updates automatically.

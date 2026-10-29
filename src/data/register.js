@@ -11,7 +11,7 @@ export const FORM_ENDPOINT = 'https://script.google.com/macros/s/AKfycbwkErjNIXF
 export const REGISTRATION_OPEN = false
 export const CLOSED_TITLE = 'Registration is closed'
 export const CLOSED_MESSAGE =
-  "Thanks to everyone who signed up — we can't wait to see you at Qiskit Fall Fest! Join our Discord for updates in the meantime."
+  "Qiskit Fall Fest 2026 has wrapped up — thanks to everyone who came out! Join our Discord for photos, results, and next year's dates."
 
 // Notice shown at the top of the registration form. Set to '' to hide it.
 export const FORM_NOTICE =
