@@ -12,7 +12,7 @@ export { FORM_ENDPOINT } from './register.js'
 
 // Set to `true` once you're ready to share the /team-registration link.
 // While `false`, the page shows a "not open yet" message instead of the form.
-export const TEAM_REGISTRATION_OPEN = true
+export const TEAM_REGISTRATION_OPEN = false
 export const NOT_OPEN_TITLE = 'Team registration isn’t open yet'
 export const NOT_OPEN_MESSAGE =
   "We'll share this link once team formation is underway. Check Discord for when it opens."
