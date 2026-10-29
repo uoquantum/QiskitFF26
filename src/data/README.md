@@ -21,7 +21,6 @@ need to touch anything outside `src/data/`.
 | `teamRegistration.js` | Team registration form (hidden page) — open/closed switch + GitHub repo naming note |
 | `learn.js` | Learning resources page — links grouped by category |
 | `winners.js` | Hackathon winners shown on Home — place, team name, optional photo |
-| `gallery.js` | Event photo gallery shown on Home — add/remove entries freely |
 
 Each file exports plain arrays/objects — add, remove, or edit entries following the
 existing shape and the corresponding page updates automatically.
@@ -56,6 +55,11 @@ add, or add more real entries above it.
 | Organizer photo | `public/speakers/yourfile.jpg` | `team.js` → `photo: '/speakers/yourfile.jpg'` | Same as above |
 | Sponsor logo | `public/sponsors/yourfile.png` | `sponsors.js` → `logo: '/sponsors/yourfile.png'` | PNG with transparent background (SVG also works), roughly 400×160px, logo filling most of the frame |
 | Site logo (header) | `public/logo.svg` (or `.png`) | `site.js` → `LOGO_URL: '/logo.svg'` | SVG ideal (crisp at any size); a square PNG (~200×200px, transparent background) also works |
+
+**Event gallery photos** work differently from everything else above — drop a
+`.jpg`/`.png` straight into `src/assets/gallery/` (see that folder's own
+README) and it shows up on Home automatically, sorted by filename. No data
+file, no path to type out — this one's intentionally just a folder.
 
 Leave `photo`/`logo`/`LOGO_URL` as an empty string (`''`) to fall back to the
 default look (initials avatar for people, plain text name for sponsors, the
@@ -237,7 +241,7 @@ Register page is a real signal, not a guess.
 Once people have grouped into teams, they register the team as a unit here —
 separate from the individual Register page above. It's a **hidden page** at
 `/team-registration`: there's no nav link, it's only reachable via that direct
-URL or the "Register Team" button in the header. It asks for the team name,
+URL. It asks for the team name,
 a team lead (name, email, optional Discord), up to 4 more members, an
 optional GitHub repo link, an optional one-line project idea, and whether
 they'd like technical help — see `TeamRegistration.jsx` and
@@ -268,8 +272,7 @@ submission (same self-healing pattern as Participants/Volunteers/Sponsors).
    "not open yet" message instead of the form — useful for checking the page
    looks right before anyone can actually submit.
 4. **Share the link.** Since it's not in the nav, send people straight to
-   `/team-registration` — or just point them at the "Register Team" button
-   in the header, which already links there.
+   `/team-registration` directly.
 
 **Testing safely:** because the page is unlisted, you can flip
 `TEAM_REGISTRATION_OPEN` to `true`, look it over locally, and flip it back to
