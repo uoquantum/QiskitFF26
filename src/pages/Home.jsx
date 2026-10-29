@@ -8,7 +8,7 @@ import Reveal from '../components/ui/Reveal.jsx'
 import SponsorMarquee from '../components/ui/SponsorMarquee.jsx'
 import ComingSoon from '../components/ui/ComingSoon.jsx'
 import { EVENT } from '../data/site.js'
-import { LEARN, FOCUS_AREAS } from '../data/workshops.js'
+import { FOCUS_AREAS } from '../data/workshops.js'
 import { SCHEDULE } from '../data/schedule.js'
 import { SPONSORS } from '../data/sponsors.js'
 import { HOME_COPY, STATS } from '../data/home.js'
@@ -208,24 +208,6 @@ export default function Home() {
                   </div>
                 </Reveal>
               ))}
-        </div>
-      </section>
-
-      <section className="section !pt-0">
-        <div className="max-w-xl mx-auto">
-          <Reveal>
-            <GlassCard className="p-8">
-              <h4 className="font-display text-ink mb-4 text-center">What you'll learn</h4>
-              <ul className="space-y-3">
-                {LEARN.map((a) => (
-                  <li key={a} className="flex gap-3 text-sm text-ink-muted leading-relaxed">
-                    <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-quantum-violet" />
-                    {a}
-                  </li>
-                ))}
-              </ul>
-            </GlassCard>
-          </Reveal>
         </div>
       </section>
 
