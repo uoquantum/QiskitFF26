@@ -230,6 +230,16 @@ export default function Home() {
                     </div>
                   )}
                   <h4 className="font-display text-lg text-ink">{w.team}</h4>
+                  {w.repo && (
+                    <a
+                      href={w.repo}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="mt-2 text-xs text-cyan-text hover:text-cyan-strong transition-colors"
+                    >
+                      View project repo ↗
+                    </a>
+                  )}
                 </GlassCard>
               </Reveal>
             )
