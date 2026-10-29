@@ -6,6 +6,7 @@ import GlassCard from '../components/ui/GlassCard.jsx'
 import SectionHeading from '../components/ui/SectionHeading.jsx'
 import Reveal from '../components/ui/Reveal.jsx'
 import SponsorMarquee from '../components/ui/SponsorMarquee.jsx'
+import GalleryMarquee from '../components/ui/GalleryMarquee.jsx'
 import ComingSoon from '../components/ui/ComingSoon.jsx'
 import { EVENT } from '../data/site.js'
 import { FOCUS_AREAS } from '../data/workshops.js'
@@ -191,24 +192,7 @@ export default function Home() {
 
       <section className="section !pt-0">
         <SectionHeading eyebrow="Memories" title="Event gallery" align="center" />
-        <div className="grid gap-4 grid-cols-2 md:grid-cols-3">
-          {GALLERY_IMAGES.length > 0
-            ? GALLERY_IMAGES.map((src, i) => (
-                <Reveal key={src} delay={i * 0.05}>
-                  <img src={src} alt="" className="w-full aspect-square rounded-xl object-cover" />
-                </Reveal>
-              ))
-            : Array.from({ length: 6 }).map((_, i) => (
-                <Reveal key={i} delay={i * 0.05}>
-                  <div className="w-full aspect-square rounded-xl border border-dashed border-ink/15 bg-ink/[0.03] flex items-center justify-center">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-ink-faint">
-                      <path d="M4 7h3l1.5-2h7L17 7h3a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1Z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
-                      <circle cx="12" cy="13" r="3.25" stroke="currentColor" strokeWidth="1.5" />
-                    </svg>
-                  </div>
-                </Reveal>
-              ))}
-        </div>
+        <GalleryMarquee images={GALLERY_IMAGES} />
       </section>
 
       <section className="section !pt-0">
