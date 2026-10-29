@@ -12,6 +12,7 @@ import { AUDIENCE, LEARN, FOCUS_AREAS } from '../data/workshops.js'
 import { SCHEDULE } from '../data/schedule.js'
 import { SPONSORS } from '../data/sponsors.js'
 import { HOME_COPY, STATS } from '../data/home.js'
+import { WINNERS } from '../data/winners.js'
 import { READY } from '../data/readiness.js'
 import { assetUrl } from '../lib/assetUrl.js'
 
@@ -61,10 +62,7 @@ export default function Home() {
             transition={{ duration: 0.7, delay: 0.34 }}
             className="pointer-events-auto mt-10 flex flex-wrap items-center gap-4"
           >
-            <GlowButton to="/register">Register now</GlowButton>
-            <GlowButton to="/challenges" variant="ghost">
-              View challenges
-            </GlowButton>
+            <GlowButton to="/challenges">View challenges</GlowButton>
           </motion.div>
         </div>
 
@@ -207,17 +205,46 @@ export default function Home() {
       </section>
 
       <section className="section !pt-0">
+        <SectionHeading eyebrow="Results" title={HOME_COPY.winnersTitle} description={HOME_COPY.winnersSubtitle} align="center" />
+        <div className="grid gap-6 sm:grid-cols-3">
+          {WINNERS.map((w, i) => {
+            const placeLabel = w.place === 1 ? '1st Place' : w.place === 2 ? '2nd Place' : '3rd Place'
+            const accent = w.place === 1 ? 'text-cyan-text' : w.place === 2 ? 'text-quantum-violet' : 'text-magenta-text'
+            return (
+              <Reveal key={w.team} delay={i * 0.08}>
+                <GlassCard glow className="p-6 h-full flex flex-col items-center text-center">
+                  <p className={`font-mono text-xs tracking-wider uppercase mb-4 ${accent}`}>{placeLabel}</p>
+                  {w.photo ? (
+                    <img
+                      src={assetUrl(w.photo)}
+                      alt={w.team}
+                      className="w-full aspect-square rounded-xl object-cover mb-4"
+                    />
+                  ) : (
+                    <div className="w-full aspect-square rounded-xl border border-dashed border-ink/15 bg-ink/[0.03] flex flex-col items-center justify-center gap-2 mb-4">
+                      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" className="text-ink-faint">
+                        <path d="M4 7h3l1.5-2h7L17 7h3a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1Z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
+                        <circle cx="12" cy="13" r="3.25" stroke="currentColor" strokeWidth="1.5" />
+                      </svg>
+                      <span className="text-xs text-ink-faint">Photo coming soon</span>
+                    </div>
+                  )}
+                  <h4 className="font-display text-lg text-ink">{w.team}</h4>
+                </GlassCard>
+              </Reveal>
+            )
+          })}
+        </div>
+
         <Reveal>
-          <GlassCard strong className="p-10 md:p-14 text-center overflow-hidden relative">
-            <div className="absolute inset-0 bg-radial-glow opacity-60" />
-            <div className="relative">
-              <h3 className="font-display text-3xl md:text-4xl text-ink mb-4">{HOME_COPY.ctaTitle}</h3>
-              <p className="text-ink-muted max-w-md mx-auto mb-8">
-                Seats are limited and it's free. Reserve your spot for {EVENT.dates}.
-              </p>
-              <GlowButton to="/register">Register now</GlowButton>
-            </div>
-          </GlassCard>
+          <div className="mt-10 text-center">
+            <p className="text-ink-muted max-w-md mx-auto mb-6">
+              And thanks to every team who built something this week — see you at the next Fall Fest.
+            </p>
+            <a href={EVENT.discord} target="_blank" rel="noreferrer" className="btn-ghost">
+              Join Discord
+            </a>
+          </div>
         </Reveal>
       </section>
     </div>

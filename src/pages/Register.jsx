@@ -130,7 +130,7 @@ export default function Register() {
         description={
           REGISTRATION_OPEN
             ? `Join us for ${EVENT.dates} at ${EVENT.location} — as a participant, volunteer, or sponsor. Takes just a couple minutes.`
-            : `Qiskit Fall Fest is happening ${EVENT.dates} at ${EVENT.location}.`
+            : `Qiskit Fall Fest took place ${EVENT.dates} at ${EVENT.location}.`
         }
       />
 

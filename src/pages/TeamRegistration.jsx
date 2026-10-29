@@ -77,7 +77,11 @@ export default function TeamRegistration() {
       <SectionHeading
         eyebrow="Hackathon"
         title="Team Registration"
-        description="Once your team is set, register it here so organizers know who's building what."
+        description={
+          TEAM_REGISTRATION_OPEN
+            ? "Once your team is set, register it here so organizers know who's building what."
+            : 'This hackathon has concluded.'
+        }
       />
 
       {!TEAM_REGISTRATION_OPEN ? (
@@ -166,8 +170,8 @@ export default function TeamRegistration() {
                   ))}
 
                   <div>
-                    <Field label="GitHub repository link">
-                      <input required
+                    <Field label="GitHub repository link (optional)">
+                      <input
                         type="url"
                         className={inputCls}
                         placeholder="https://github.com/your-team/entangled-ones_QFF2026_uottawa"
